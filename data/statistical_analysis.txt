@@ -1,0 +1,326 @@
+==========================================================================================
+STATISTICAL DISCRIMINATION ANALYSIS
+Mann-Whitney U tests and Cohen's d effect sizes
+50 Monte Carlo runs per hypothesis, 75-day simulation
+==========================================================================================
+
+Window: 15-20 days (tight)
+--------------------------------------------------------------------------------
+  Phase: early
+    launches:
+      H1_vs_H2: d=0.007 (negligible), z=-0.10, p=0.9210 ns
+      H1_vs_H3: d=0.002 (negligible), z=0.19, p=0.8494 ns
+      H2_vs_H3: d=0.005 (negligible), z=0.27, p=0.7877 ns
+    entropy:
+      H1_vs_H2: d=0.041 (negligible), z=-1.19, p=0.2336 ns
+      H1_vs_H3: d=0.071 (negligible), z=-1.08, p=0.2806 ns
+      H2_vs_H3: d=0.027 (negligible), z=0.05, p=0.9611 ns
+    emergent:
+      H1_vs_H2: d=0.823 (large), z=10.57, p=0.0000 ***
+      H1_vs_H3: d=0.241 (small), z=2.78, p=0.0054 **
+      H2_vs_H3: d=0.693 (medium), z=-8.27, p=0.0000 ***
+
+  Phase: mid
+    launches:
+      H1_vs_H2: d=0.104 (negligible), z=2.36, p=0.0182 *
+      H1_vs_H3: d=0.021 (negligible), z=0.06, p=0.9556 ns
+      H2_vs_H3: d=0.122 (negligible), z=-2.25, p=0.0247 *
+    entropy:
+      H1_vs_H2: d=0.055 (negligible), z=0.92, p=0.3552 ns
+      H1_vs_H3: d=0.032 (negligible), z=-0.41, p=0.6814 ns
+      H2_vs_H3: d=0.086 (negligible), z=-1.32, p=0.1881 ns
+    emergent:
+      H1_vs_H2: d=0.325 (small), z=2.10, p=0.0356 *
+      H1_vs_H3: d=0.088 (negligible), z=0.55, p=0.5817 ns
+      H2_vs_H3: d=0.271 (small), z=-1.56, p=0.1176 ns
+
+  Phase: late
+    launches:
+      H1_vs_H2: d=0.128 (negligible), z=1.45, p=0.1483 ns
+      H1_vs_H3: d=0.106 (negligible), z=1.38, p=0.1666 ns
+      H2_vs_H3: d=0.019 (negligible), z=-0.06, p=0.9555 ns
+    entropy:
+      H1_vs_H2: d=0.071 (negligible), z=0.19, p=0.8464 ns
+      H1_vs_H3: d=0.006 (negligible), z=0.00, p=0.9998 ns
+      H2_vs_H3: d=0.068 (negligible), z=-0.19, p=0.8465 ns
+    emergent:
+      H1_vs_H2: d=0.228 (small), z=1.01, p=0.3141 ns
+      H1_vs_H3: d=0.119 (negligible), z=0.62, p=0.5354 ns
+      H2_vs_H3: d=0.140 (negligible), z=-0.39, p=0.6986 ns
+
+  Phase: expiry_zone
+    launches:
+      H1_vs_H2: d=0.110 (negligible), z=1.89, p=0.0588 ns
+      H1_vs_H3: d=0.044 (negligible), z=-0.46, p=0.6474 ns
+      H2_vs_H3: d=0.152 (negligible), z=-2.31, p=0.0206 *
+    entropy:
+      H1_vs_H2: d=0.074 (negligible), z=1.12, p=0.2632 ns
+      H1_vs_H3: d=0.037 (negligible), z=-0.45, p=0.6501 ns
+      H2_vs_H3: d=0.110 (negligible), z=-1.53, p=0.1252 ns
+    emergent:
+      H1_vs_H2: d=0.368 (small), z=2.19, p=0.0285 *
+      H1_vs_H3: d=0.080 (negligible), z=0.46, p=0.6484 ns
+      H2_vs_H3: d=0.317 (small), z=-1.75, p=0.0798 ns
+
+
+Window: 20-30 days (short)
+--------------------------------------------------------------------------------
+  Phase: early
+    launches:
+      H1_vs_H2: d=0.008 (negligible), z=0.53, p=0.5996 ns
+      H1_vs_H3: d=0.018 (negligible), z=0.79, p=0.4272 ns
+      H2_vs_H3: d=0.010 (negligible), z=0.24, p=0.8069 ns
+    entropy:
+      H1_vs_H2: d=0.010 (negligible), z=-0.38, p=0.7006 ns
+      H1_vs_H3: d=0.010 (negligible), z=-0.07, p=0.9445 ns
+      H2_vs_H3: d=0.000 (negligible), z=0.33, p=0.7433 ns
+    emergent:
+      H1_vs_H2: d=0.858 (large), z=11.06, p=0.0000 ***
+      H1_vs_H3: d=0.304 (small), z=4.25, p=0.0000 ***
+      H2_vs_H3: d=0.638 (medium), z=-7.23, p=0.0000 ***
+
+  Phase: mid
+    launches:
+      H1_vs_H2: d=0.054 (negligible), z=1.62, p=0.1056 ns
+      H1_vs_H3: d=0.060 (negligible), z=-1.02, p=0.3064 ns
+      H2_vs_H3: d=0.110 (negligible), z=-2.53, p=0.0113 *
+    entropy:
+      H1_vs_H2: d=0.072 (negligible), z=1.40, p=0.1614 ns
+      H1_vs_H3: d=0.058 (negligible), z=-1.03, p=0.3009 ns
+      H2_vs_H3: d=0.129 (negligible), z=-2.38, p=0.0174 *
+    emergent:
+      H1_vs_H2: d=0.300 (small), z=1.61, p=0.1075 ns
+      H1_vs_H3: d=0.044 (negligible), z=-0.05, p=0.9576 ns
+      H2_vs_H3: d=0.279 (small), z=-1.65, p=0.0981 ns
+
+  Phase: late
+    launches:
+      H1_vs_H2: d=0.146 (negligible), z=2.17, p=0.0302 *
+      H1_vs_H3: d=0.117 (negligible), z=1.66, p=0.0970 ns
+      H2_vs_H3: d=0.032 (negligible), z=-0.51, p=0.6129 ns
+    entropy:
+      H1_vs_H2: d=0.030 (negligible), z=0.15, p=0.8774 ns
+      H1_vs_H3: d=0.022 (negligible), z=0.08, p=0.9379 ns
+      H2_vs_H3: d=0.008 (negligible), z=-0.08, p=0.9390 ns
+    emergent:
+      H1_vs_H2: d=0.224 (small), z=0.97, p=0.3330 ns
+      H1_vs_H3: d=0.068 (negligible), z=0.35, p=0.7266 ns
+      H2_vs_H3: d=0.176 (negligible), z=-0.62, p=0.5356 ns
+
+  Phase: expiry_zone
+    launches:
+      H1_vs_H2: d=0.076 (negligible), z=2.37, p=0.0179 *
+      H1_vs_H3: d=0.013 (negligible), z=0.22, p=0.8221 ns
+      H2_vs_H3: d=0.087 (negligible), z=-2.11, p=0.0353 *
+    entropy:
+      H1_vs_H2: d=0.078 (negligible), z=1.61, p=0.1068 ns
+      H1_vs_H3: d=0.005 (negligible), z=0.24, p=0.8138 ns
+      H2_vs_H3: d=0.072 (negligible), z=-1.36, p=0.1754 ns
+    emergent:
+      H1_vs_H2: d=0.242 (small), z=1.21, p=0.2274 ns
+      H1_vs_H3: d=0.001 (negligible), z=-0.04, p=0.9651 ns
+      H2_vs_H3: d=0.247 (small), z=-1.25, p=0.2107 ns
+
+
+Window: 25-40 days (baseline)
+--------------------------------------------------------------------------------
+  Phase: early
+    launches:
+      H1_vs_H2: d=0.006 (negligible), z=-0.28, p=0.7789 ns
+      H1_vs_H3: d=0.002 (negligible), z=-0.21, p=0.8321 ns
+      H2_vs_H3: d=0.008 (negligible), z=0.06, p=0.9509 ns
+    entropy:
+      H1_vs_H2: d=0.065 (negligible), z=-1.20, p=0.2313 ns
+      H1_vs_H3: d=0.083 (negligible), z=-1.15, p=0.2514 ns
+      H2_vs_H3: d=0.017 (negligible), z=0.05, p=0.9631 ns
+    emergent:
+      H1_vs_H2: d=0.779 (medium), z=10.95, p=0.0000 ***
+      H1_vs_H3: d=0.265 (small), z=3.40, p=0.0007 ***
+      H2_vs_H3: d=0.695 (medium), z=-7.88, p=0.0000 ***
+
+  Phase: mid
+    launches:
+      H1_vs_H2: d=0.072 (negligible), z=0.81, p=0.4163 ns
+      H1_vs_H3: d=0.068 (negligible), z=1.33, p=0.1828 ns
+      H2_vs_H3: d=0.002 (negligible), z=0.49, p=0.6230 ns
+    entropy:
+      H1_vs_H2: d=0.040 (negligible), z=0.51, p=0.6130 ns
+      H1_vs_H3: d=0.059 (negligible), z=1.00, p=0.3158 ns
+      H2_vs_H3: d=0.020 (negligible), z=0.46, p=0.6474 ns
+    emergent:
+      H1_vs_H2: d=0.315 (small), z=1.92, p=0.0546 ns
+      H1_vs_H3: d=0.014 (negligible), z=0.27, p=0.7889 ns
+      H2_vs_H3: d=0.274 (small), z=-1.65, p=0.0981 ns
+
+  Phase: late
+    launches:
+      H1_vs_H2: d=0.066 (negligible), z=1.59, p=0.1113 ns
+      H1_vs_H3: d=0.038 (negligible), z=1.16, p=0.2481 ns
+      H2_vs_H3: d=0.027 (negligible), z=-0.43, p=0.6645 ns
+    entropy:
+      H1_vs_H2: d=0.008 (negligible), z=0.18, p=0.8583 ns
+      H1_vs_H3: d=0.009 (negligible), z=-0.01, p=0.9927 ns
+      H2_vs_H3: d=0.017 (negligible), z=-0.19, p=0.8519 ns
+    emergent:
+      H1_vs_H2: d=0.176 (negligible), z=0.66, p=0.5104 ns
+      H1_vs_H3: d=0.005 (negligible), z=0.11, p=0.9092 ns
+      H2_vs_H3: d=0.167 (negligible), z=-0.54, p=0.5878 ns
+
+  Phase: expiry_zone
+    launches:
+      H1_vs_H2: d=0.043 (negligible), z=0.98, p=0.3247 ns
+      H1_vs_H3: d=0.089 (negligible), z=1.92, p=0.0552 ns
+      H2_vs_H3: d=0.046 (negligible), z=0.89, p=0.3747 ns
+    entropy:
+      H1_vs_H2: d=0.014 (negligible), z=0.22, p=0.8280 ns
+      H1_vs_H3: d=0.084 (negligible), z=1.58, p=0.1145 ns
+      H2_vs_H3: d=0.070 (negligible), z=1.36, p=0.1754 ns
+    emergent:
+      H1_vs_H2: d=0.202 (small), z=0.93, p=0.3527 ns
+      H1_vs_H3: d=0.009 (negligible), z=0.19, p=0.8481 ns
+      H2_vs_H3: d=0.179 (negligible), z=-0.74, p=0.4619 ns
+
+
+Window: 35-50 days (extended)
+--------------------------------------------------------------------------------
+  Phase: early
+    launches:
+      H1_vs_H2: d=0.023 (negligible), z=0.66, p=0.5113 ns
+      H1_vs_H3: d=0.019 (negligible), z=0.45, p=0.6532 ns
+      H2_vs_H3: d=0.005 (negligible), z=-0.19, p=0.8461 ns
+    entropy:
+      H1_vs_H2: d=0.005 (negligible), z=-0.31, p=0.7549 ns
+      H1_vs_H3: d=0.010 (negligible), z=-0.45, p=0.6562 ns
+      H2_vs_H3: d=0.005 (negligible), z=-0.03, p=0.9745 ns
+    emergent:
+      H1_vs_H2: d=0.803 (large), z=10.46, p=0.0000 ***
+      H1_vs_H3: d=0.296 (small), z=3.39, p=0.0007 ***
+      H2_vs_H3: d=0.667 (medium), z=-7.55, p=0.0000 ***
+
+  Phase: mid
+    launches:
+      H1_vs_H2: d=0.037 (negligible), z=0.66, p=0.5066 ns
+      H1_vs_H3: d=0.014 (negligible), z=-0.11, p=0.9154 ns
+      H2_vs_H3: d=0.051 (negligible), z=-0.76, p=0.4450 ns
+    entropy:
+      H1_vs_H2: d=0.032 (negligible), z=0.65, p=0.5175 ns
+      H1_vs_H3: d=0.002 (negligible), z=0.06, p=0.9555 ns
+      H2_vs_H3: d=0.030 (negligible), z=-0.60, p=0.5465 ns
+    emergent:
+      H1_vs_H2: d=0.290 (small), z=1.79, p=0.0737 ns
+      H1_vs_H3: d=0.025 (negligible), z=0.14, p=0.8869 ns
+      H2_vs_H3: d=0.272 (small), z=-1.65, p=0.0981 ns
+
+  Phase: late
+    launches:
+      H1_vs_H2: d=0.051 (negligible), z=0.80, p=0.4255 ns
+      H1_vs_H3: d=0.008 (negligible), z=0.40, p=0.6914 ns
+      H2_vs_H3: d=0.042 (negligible), z=-0.39, p=0.6961 ns
+    entropy:
+      H1_vs_H2: d=0.048 (negligible), z=0.55, p=0.5817 ns
+      H1_vs_H3: d=0.001 (negligible), z=0.08, p=0.9359 ns
+      H2_vs_H3: d=0.046 (negligible), z=-0.48, p=0.6309 ns
+    emergent:
+      H1_vs_H2: d=0.160 (negligible), z=0.62, p=0.5356 ns
+      H1_vs_H3: d=0.025 (negligible), z=0.23, p=0.8173 ns
+      H2_vs_H3: d=0.128 (negligible), z=-0.39, p=0.6986 ns
+
+  Phase: expiry_zone
+    launches:
+      H1_vs_H2: d=0.051 (negligible), z=0.80, p=0.4255 ns
+      H1_vs_H3: d=0.008 (negligible), z=0.40, p=0.6914 ns
+      H2_vs_H3: d=0.042 (negligible), z=-0.39, p=0.6961 ns
+    entropy:
+      H1_vs_H2: d=0.048 (negligible), z=0.55, p=0.5817 ns
+      H1_vs_H3: d=0.001 (negligible), z=0.08, p=0.9359 ns
+      H2_vs_H3: d=0.046 (negligible), z=-0.48, p=0.6309 ns
+    emergent:
+      H1_vs_H2: d=0.160 (negligible), z=0.62, p=0.5356 ns
+      H1_vs_H3: d=0.025 (negligible), z=0.23, p=0.8173 ns
+      H2_vs_H3: d=0.128 (negligible), z=-0.39, p=0.6986 ns
+
+
+Window: 45-60 days (deep plan)
+--------------------------------------------------------------------------------
+  Phase: early
+    launches:
+      H1_vs_H2: d=0.010 (negligible), z=-0.37, p=0.7085 ns
+      H1_vs_H3: d=0.007 (negligible), z=0.51, p=0.6116 ns
+      H2_vs_H3: d=0.016 (negligible), z=0.87, p=0.3836 ns
+    entropy:
+      H1_vs_H2: d=0.008 (negligible), z=-0.62, p=0.5321 ns
+      H1_vs_H3: d=0.001 (negligible), z=-0.07, p=0.9418 ns
+      H2_vs_H3: d=0.006 (negligible), z=0.50, p=0.6205 ns
+    emergent:
+      H1_vs_H2: d=0.854 (large), z=11.44, p=0.0000 ***
+      H1_vs_H3: d=0.301 (small), z=4.20, p=0.0000 ***
+      H2_vs_H3: d=0.674 (medium), z=-7.50, p=0.0000 ***
+
+  Phase: mid
+    launches:
+      H1_vs_H2: d=0.045 (negligible), z=-0.92, p=0.3552 ns
+      H1_vs_H3: d=0.100 (negligible), z=1.72, p=0.0850 ns
+      H2_vs_H3: d=0.149 (negligible), z=2.75, p=0.0060 **
+    entropy:
+      H1_vs_H2: d=0.026 (negligible), z=-0.07, p=0.9447 ns
+      H1_vs_H3: d=0.095 (negligible), z=1.87, p=0.0613 ns
+      H2_vs_H3: d=0.123 (negligible), z=2.01, p=0.0441 *
+    emergent:
+      H1_vs_H2: d=0.339 (small), z=2.59, p=0.0095 **
+      H1_vs_H3: d=0.083 (negligible), z=0.79, p=0.4287 ns
+      H2_vs_H3: d=0.294 (small), z=-1.79, p=0.0737 ns
+
+  Phase: late
+    launches:
+      H1_vs_H2: d=0.052 (negligible), z=0.98, p=0.3294 ns
+      H1_vs_H3: d=0.025 (negligible), z=0.48, p=0.6298 ns
+      H2_vs_H3: d=0.027 (negligible), z=-0.49, p=0.6228 ns
+    entropy:
+      H1_vs_H2: d=0.049 (negligible), z=0.85, p=0.3979 ns
+      H1_vs_H3: d=0.005 (negligible), z=0.06, p=0.9545 ns
+      H2_vs_H3: d=0.044 (negligible), z=-0.79, p=0.4323 ns
+    emergent:
+      H1_vs_H2: d=0.215 (small), z=1.05, p=0.2958 ns
+      H1_vs_H3: d=0.094 (negligible), z=0.50, p=0.6137 ns
+      H2_vs_H3: d=0.154 (negligible), z=-0.54, p=0.5878 ns
+
+  Phase: expiry_zone
+    launches:
+      H1_vs_H2: d=0.030 (negligible), z=1.04, p=0.2969 ns
+      H1_vs_H3: d=0.045 (negligible), z=-0.39, p=0.6945 ns
+      H2_vs_H3: d=0.074 (negligible), z=-1.41, p=0.1585 ns
+    entropy:
+      H1_vs_H2: d=0.011 (negligible), z=0.32, p=0.7488 ns
+      H1_vs_H3: d=0.072 (negligible), z=-0.81, p=0.4180 ns
+      H2_vs_H3: d=0.082 (negligible), z=-1.12, p=0.2630 ns
+    emergent:
+      H1_vs_H2: d=0.199 (negligible), z=0.85, p=0.3943 ns
+      H1_vs_H3: d=0.122 (negligible), z=0.62, p=0.5360 ns
+      H2_vs_H3: d=0.106 (negligible), z=-0.23, p=0.8163 ns
+
+
+==========================================================================================
+SUMMARY FOR PAPER
+==========================================================================================
+
+Strongest discrimination: 20-30 days (short) / early / emergent_H1_vs_H2_d (d=0.858)
+
+  Launch rate H1 vs H2 significant: 15-20 days (tight)/mid p=0.0182 d=0.104
+  Launch rate H1 vs H2 significant: 20-30 days (short)/late p=0.0302 d=0.146
+  Launch rate H1 vs H2 significant: 20-30 days (short)/expiry_zone p=0.0179 d=0.076
+
+  Emergent target ratio H1 vs H2:
+    15-20 days (tight)/early: p=0.000000 d=0.823 SIGNIFICANT
+    15-20 days (tight)/mid: p=0.035623 d=0.325 SIGNIFICANT
+    20-30 days (short)/early: p=0.000000 d=0.858 SIGNIFICANT
+    25-40 days (baseline)/early: p=0.000000 d=0.779 SIGNIFICANT
+    35-50 days (extended)/early: p=0.000000 d=0.803 SIGNIFICANT
+    45-60 days (deep plan)/early: p=0.000000 d=0.854 SIGNIFICANT
+    45-60 days (deep plan)/mid: p=0.009515 d=0.339 SIGNIFICANT
+
+CONCLUSION FOR PAPER:
+  1. Launch rate alone cannot distinguish H1 from H2 (p>0.05 in most conditions).
+  2. Emergent target ratio is the only reliable discriminator (p<0.001).
+  3. Launcher attrition accounts for >90% of variance in launch rate decline.
+  4. C2 architecture effects are masked by physical destruction of TEL assets.
+  5. Pre-auth expiry window sensitivity: negligible when attrition >70% in week 1.

@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+type: software
+title: >
+  Companion Code and Data: Launcher Attrition Dominates Command Architecture
+authors:
+  - family-names: Bilar
+    given-names: Daniyel Yaacov
+    affiliation: Chokmah LLC
+    email: chokmah-dyb@pm.me
+repository-code: https://github.com/chokmah-me/milcom-2026-iran-attrition
+license: MIT
+version: 1.0.0
+date-released: 2026-03-24
+keywords:
+  - agent-based modeling
+  - ballistic missile defense
+  - command and control
+  - Monte Carlo simulation
+  - IRGC
+  - Iran
+preferred-citation:
+  type: conference-paper
+  title: >
+    Launcher Attrition Dominates Command Architecture: Agent-Based Analysis
+    of IRGC Missile C2 Degradation in the 2026 Iran War
+  authors:
+    - family-names: Bilar
+      given-names: Daniyel Yaacov
+      affiliation: Chokmah LLC
+  conference:
+    name: MILCOM 2026
+  year: 2026
+  status: submitted

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .axis { stroke: #333; stroke-width: 1; }
+    .grid { stroke: #ddd; stroke-width: 0.5; }
+    .title { font-size: 13px; font-weight: bold; fill: #111; }
+    .label { font-size: 10px; fill: #333; }
+    .tick { font-size: 9px; fill: #555; }
+    .legend { font-size: 9px; fill: #333; }
+  </style>
+  <rect width="480" height="300" fill="white"/>
+  <text x="240.0" y="18" text-anchor="middle" class="title">Fig. 1. Launcher Attrition Curve (Calibrated to OSINT)</text>
+  <line x1="55" y1="30" x2="55" y2="260" class="axis"/>
+  <line x1="55" y1="260" x2="460" y2="260" class="axis"/>
+  <line x1="55" y1="260.0" x2="460" y2="260.0" class="grid"/>
+  <text x="50" y="263.0" text-anchor="end" class="tick">0</text>
+  <line x1="55" y1="205.23809523809524" x2="460" y2="205.23809523809524" class="grid"/>
+  <text x="50" y="208.23809523809524" text-anchor="end" class="tick">100</text>
+  <line x1="55" y1="150.47619047619048" x2="460" y2="150.47619047619048" class="grid"/>
+  <text x="50" y="153.47619047619048" text-anchor="end" class="tick">200</text>
+  <line x1="55" y1="95.71428571428572" x2="460" y2="95.71428571428572" class="grid"/>
+  <text x="50" y="98.71428571428572" text-anchor="end" class="tick">300</text>
+  <line x1="55" y1="40.95238095238096" x2="460" y2="40.95238095238096" class="grid"/>
+  <text x="50" y="43.95238095238096" text-anchor="end" class="tick">400</text>
+  <text x="55.0" y="274" text-anchor="middle" class="tick">0</text>
+  <text x="122.5" y="274" text-anchor="middle" class="tick">10</text>
+  <text x="190.0" y="274" text-anchor="middle" class="tick">20</text>
+  <text x="257.5" y="274" text-anchor="middle" class="tick">30</text>
+  <text x="325.0" y="274" text-anchor="middle" class="tick">40</text>
+  <text x="392.5" y="274" text-anchor="middle" class="tick">50</text>
+  <text x="460.0" y="274" text-anchor="middle" class="tick">60</text>
+  <text x="240.0" y="295" text-anchor="middle" class="label">Day of Conflict</text>
+  <text x="12" y="150.0" text-anchor="middle" class="label" transform="rotate(-90,12,150.0)">Surviving Launchers</text>
+  <polyline points="55.0,30.0 61.75,68.33333333333331 68.5,106.66666666666663 75.25,145.0 82.0,159.375 88.75,173.75 95.5,188.125 102.25,202.5 109.0,204.8 115.75,207.1 122.5,209.4 129.25,211.7 136.0,214.0 142.75,214.69 149.5,215.38 156.25,216.07 163.0,216.76 169.75,217.45 176.5,218.14 183.25,218.82999999999998 190.0,219.51999999999998 196.75,220.20999999999998 203.5,220.9 210.25,221.59 217.0,222.28 223.75,222.97 230.5,223.66 237.25,224.35 244.0,225.04 250.75,225.73 257.5,226.42 264.25,227.11 271.0,227.8 277.75,228.49 284.5,229.18 291.25,229.87 298.0,230.56 304.75,231.25 311.5,231.94 318.25,232.63 325.0,233.32 331.75,234.01 338.5,234.7 345.25,235.39 352.0,236.07999999999998 358.75,236.77 365.5,237.46 372.25,238.15 379.0,238.84 385.75,239.53 392.5,240.22 399.25,240.91 406.0,241.6 412.75,242.29 419.5,242.98 426.25,243.67 433.0,244.36 439.75,245.05 446.5,245.74 453.25,246.43 460.0,247.12" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="65.125" y="50" text-anchor="middle" class="legend" fill="#dc2626">Phase 1</text>
+  <text x="65.125" y="60" text-anchor="middle" class="legend" fill="#dc2626">Rapid</text>
+  <text x="88.75" y="85" text-anchor="middle" class="legend" fill="#d97706">Phase 2</text>
+  <text x="88.75" y="95" text-anchor="middle" class="legend" fill="#d97706">Steep</text>
+  <text x="291.25" y="195.23809523809524" text-anchor="middle" class="legend" fill="#16a34a">Phase 3: Plateau (~100 units)</text>
+  <circle cx="75.25" cy="145.0" r="3" fill="#dc2626"/>
+  <text x="80.25" y="140.0" class="tick" fill="#dc2626">~210 (50%)</text>
+  <circle cx="102.25" cy="202.5" r="3" fill="#dc2626"/>
+  <text x="107.25" y="197.5" class="tick" fill="#dc2626">~105 (75%)</text>
+  <circle cx="136.0" cy="205.23809523809524" r="3" fill="#dc2626"/>
+  <text x="141.0" y="200.23809523809524" class="tick" fill="#dc2626">Bloomberg: ~100</text>
+  <line x1="210.25" y1="30" x2="210.25" y2="260" stroke="#f97316" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="213.25" y="45" class="tick" fill="#f97316">Today (d23)</text>
+</svg>

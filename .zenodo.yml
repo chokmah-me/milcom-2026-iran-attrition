@@ -1,0 +1,53 @@
+# Zenodo metadata for milcom-2026-iran-attrition
+# Use this when creating the Zenodo upload at https://zenodo.org/deposit
+
+upload_type: software
+
+title: >
+  Companion Code and Data: "Launcher Attrition Dominates Command Architecture:
+  Agent-Based Analysis of IRGC Missile C2 Degradation in the 2026 Iran War"
+
+creators:
+  - name: Bilar, Daniyel Yaacov
+    affiliation: Chokmah LLC
+    orcid: ""   # add if you have one
+
+description: >
+  Agent-based simulation, statistical analysis code, pre-computed results,
+  interactive dashboards, and publication figures accompanying the MILCOM 2026
+  paper "Launcher Attrition Dominates Command Architecture." The simulation
+  models 120 IRGC launch cells under three competing C2 hypotheses (active
+  distributed command, pre-programmed execution, mixed degradation) calibrated
+  against open-source conflict data from the 2026 Iran War. Monte Carlo
+  analysis across 1,350 runs demonstrates that launch rate cannot discriminate
+  C2 architecture when launcher attrition exceeds 70% in week one, and
+  identifies the emergent target ratio as the sole reliable discriminator.
+  Code is pure Python 3.8+ stdlib (no dependencies). Interactive artifacts are
+  self-contained React/JSX components.
+
+keywords:
+  - agent-based modeling
+  - ballistic missile defense
+  - command and control
+  - IRGC
+  - launcher attrition
+  - Monte Carlo simulation
+  - OSINT
+  - Iran
+  - MILCOM
+
+license: other-open
+  # Code: MIT (see LICENSE)
+  # Paper, data, figures: CC-BY 4.0 (see LICENSE-DATA)
+
+related_identifiers:
+  - relation: isSupplementTo
+    identifier: ""   # add MILCOM DOI once assigned
+    scheme: doi
+
+version: "1.0.0"
+
+notes: >
+  Portions of simulation code and manuscript were produced with assistance
+  from Claude (Anthropic, claude-sonnet-4-6). The author is solely responsible
+  for all analytical conclusions and claims.

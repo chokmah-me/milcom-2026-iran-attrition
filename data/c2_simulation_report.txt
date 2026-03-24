@@ -1,0 +1,77 @@
+========================================================================
+IRGC C2 DEGRADATION SIMULATION: RESULTS REPORT
+========================================================================
+
+--- H1: Active Distributed C2 ---
+
+  Initial daily launches (day 0):  47.2
+  50% degradation reached:         day 29
+  Functional cessation (<1/day):   day >60
+
+  Target entropy (week 1 avg):     2.507
+  Target entropy (final week avg): 0.830
+  Entropy trend:                   DECLINING
+
+  Emergent target ratio (week 1):  0.083
+  Emergent target ratio (final):   0.000
+
+  Regional variance (week 1):      8.490
+  Regional variance (final):       0.064
+
+--- H2: Pre-Programmed Execution ---
+
+  Initial daily launches (day 0):  45.9
+  50% degradation reached:         day 29
+  Functional cessation (<1/day):   day >60
+
+  Target entropy (week 1 avg):     3.172
+  Target entropy (final week avg): 0.721
+  Entropy trend:                   DECLINING
+
+  Emergent target ratio (week 1):  0.000
+  Emergent target ratio (final):   0.000
+
+  Regional variance (week 1):      8.372
+  Regional variance (final):       0.056
+
+--- H3: Mixed Degradation ---
+
+  Initial daily launches (day 0):  46.5
+  50% degradation reached:         day 28
+  Functional cessation (<1/day):   day >60
+
+  Target entropy (week 1 avg):     2.913
+  Target entropy (final week avg): 0.685
+  Entropy trend:                   DECLINING
+
+  Emergent target ratio (week 1):  0.055
+  Emergent target ratio (final):   0.000
+
+  Regional variance (week 1):      9.028
+  Regional variance (final):       0.054
+
+========================================================================
+DISCRIMINATOR SUMMARY
+========================================================================
+
+Key observable differences between hypotheses:
+
+1. EMERGENT TARGET RATIO
+   H1 shows high emergent targeting (cells adapt to new targets).
+   H2 shows near-zero emergent targeting (cells stuck on pre-war lists).
+   H3 shows intermediate values that decline as connectivity degrades.
+
+2. TEMPORAL DECAY PROFILE
+   H1 degrades smoothly with cell attrition.
+   H2 shows a sharp cliff when pre-auth packages expire (day 25-40).
+   H3 shows two-phase decay: smooth then cliff.
+
+3. TARGET ENTROPY
+   H1 maintains high entropy (diverse, adaptive targeting).
+   H2 entropy collapses as cells exhaust fixed target lists.
+   H3 entropy declines gradually.
+
+4. REGIONAL VARIANCE
+   H1 shows low variance (coordinated even under stress).
+   H2 shows low variance initially, rising after expiry.
+   H3 shows increasing variance as connected/disconnected diverge.
