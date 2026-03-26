@@ -6,7 +6,7 @@ Companion code and data for:
 
 **Author:** Daniyel Yaacov Bilar, Chokmah LLC  
 **Contact:** chokmah-dyb@pm.me  
-**DOI:** *(assigned by Zenodo on release)*  
+**DOI:** [10.5281/zenodo.19210121](https://doi.org/10.5281/zenodo.19210121)  
 **License:** Code: MIT. Paper and data: CC-BY 4.0. See [LICENSE](LICENSE) and [LICENSE-DATA](LICENSE-DATA).
 
 ---
@@ -18,7 +18,7 @@ simulation/         Python simulation code (stdlib only, no dependencies)
 figures/            Publication SVG figures (Figs 1-3)
 artifacts/          Interactive JSX dashboards for browser exploration
 data/               Pre-computed CSV results and plain-text reports
-paper/              Paper manuscript (v8)
+paper/              Paper manuscript (placeholder pending review)
 ```
 
 ---
@@ -56,7 +56,7 @@ Writes `sensitivity_results.csv` and `sensitivity_report.txt` to `data/`.
 python statistical_tests.py
 ```
 
-Writes `statistical_analysis.txt` to `data/`.
+Writes `statistical_analysis.txt` and `statistical_results.json` to `data/`.
 
 **Step 4. Regenerate SVG figures**
 
@@ -92,13 +92,13 @@ The central finding: **launch rate cannot distinguish C2 hypothesis when launche
 
 ## Simulation design
 
-The simulation models 120 IRGC launch cells across five operational regions (West Iran, East Azerbaijan, Central Iran, South Coast, Northeast), reflecting an estimated pre-war inventory of 410-440 launchers at ~3.5 TELs per cell. Three competing C2 hypotheses are modeled:
+Two simulation configurations are provided. The **base simulation** (`c2_degradation_sim.py`) models 85 launch cells across five geographic regions (East Azerbaijan, Lorestan, Kermanshah, Isfahan, Hormozgan) and runs 30 Monte Carlo seeds per hypothesis by default. The **sensitivity analysis** (`sensitivity_analysis.py`) uses a calibrated 120-cell model across five operational regions (West Iran, East Azerbaijan, Central Iran, South Coast, Northeast), reflecting an estimated pre-war inventory of 410-440 launchers at ~3.5 TELs per cell. Three competing C2 hypotheses are modeled in both:
 
 - **H1 (Active Distributed C2):** Connected cells receive updated targeting including conflict-emergent targets.
 - **H2 (Pre-Programmed Execution):** Cells execute pre-authorized target packages on synchronized clocks regardless of connectivity.
 - **H3 (Mixed Degradation):** Connected cells follow H1 behavior; disconnected cells follow H2.
 
-Launcher attrition is calibrated as an exogenous three-phase curve against open-source conflict data: 50% in 3 days, 75% by day 7, plateau near 100 surviving units from day 12. Monte Carlo analysis runs 50 seeds per hypothesis per expiry window (1,350 runs total).
+Launcher attrition is calibrated as an exogenous three-phase curve against open-source conflict data: 50% in 3 days, 75% by day 7, plateau near 100 surviving units from day 12. The sensitivity analysis runs 40 seeds per hypothesis per expiry window (600 runs total across 5 windows).
 
 ---
 
@@ -113,7 +113,7 @@ Launcher attrition is calibrated as an exogenous three-phase curve against open-
   booktitle = {Proceedings of MILCOM 2026},
   year      = {2026},
   note      = {Submitted},
-  doi       = {}
+  doi       = {10.5281/zenodo.19210121}
 }
 ```
 
