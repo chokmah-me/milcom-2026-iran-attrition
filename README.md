@@ -6,7 +6,8 @@ Companion code and data for:
 
 **Author:** Daniyel Yaacov Bilar, Chokmah LLC  
 **Contact:** chokmah-dyb@pm.me  
-**DOI:** [10.5281/zenodo.19210121](https://doi.org/10.5281/zenodo.19210121)  
+**Code DOI:** 10.5281/zenodo.19558036 (v4.0)
+**Paper DOI:** 10.5281/zenodo.19558494 (v4.0)
 **License:** Code: MIT. Paper and data: CC-BY 4.0. See [LICENSE](LICENSE) and [LICENSE-DATA](LICENSE-DATA).
 
 ---
@@ -180,7 +181,7 @@ Launcher attrition is calibrated as an exogenous three-phase curve against open-
   booktitle = {Proceedings of MILCOM 2026},
   year      = {2026},
   note      = {Submitted},
-  doi       = {10.5281/zenodo.19210121}
+  doi       = {10.5281/zenodo.19558494}
 }
 ```
 
