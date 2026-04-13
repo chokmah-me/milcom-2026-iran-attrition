@@ -1,0 +1,160 @@
+==========================================================================================
+WORKSTREAM A: MAGAZINE DISCIPLINE DISCRIMINATION ANALYSIS
+==========================================================================================
+
+Grid: 50 runs x 3 hypotheses x 4 profiles x 3 modes
+Expiry window: (25, 40) (baseline only)
+Campaign length: 40 days (through April 8 ceasefire)
+
+Headline question: under v3_realistic + coordinated rationing,
+does launch rate discriminate H1 from H2?
+
+------------------------------------------------------------------------------------------
+LAUNCH RATE DISCRIMINATION (Mann-Whitney U, rank-biserial r)
+------------------------------------------------------------------------------------------
+profile            rationing      phase  comparison          r         p    sig
+v1_original        coordinated    early  H1_vs_H2        0.005    0.9008     ns
+v1_original        coordinated    early  H1_vs_H3        0.005    0.8862     ns
+v1_original        coordinated    early  H2_vs_H3        0.001    0.9824     ns
+v1_original        coordinated    mid    H1_vs_H2        0.024    0.4241     ns
+v1_original        coordinated    mid    H1_vs_H3        0.021    0.4926     ns
+v1_original        coordinated    mid    H2_vs_H3        0.003    0.9195     ns
+v1_original        coordinated    late   H1_vs_H2        0.044    0.1353     ns
+v1_original        coordinated    late   H1_vs_H3        0.009    0.7550     ns
+v1_original        coordinated    late   H2_vs_H3        0.035    0.2355     ns
+v1_original        individual     early  H1_vs_H2        0.014    0.6960     ns
+v1_original        individual     early  H1_vs_H3        0.015    0.6708     ns
+v1_original        individual     early  H2_vs_H3        0.001    0.9746     ns
+v1_original        individual     mid    H1_vs_H2        0.013    0.6753     ns
+v1_original        individual     mid    H1_vs_H3        0.001    0.9696     ns
+v1_original        individual     mid    H2_vs_H3        0.013    0.6705     ns
+v1_original        individual     late   H1_vs_H2        0.005    0.8651     ns
+v1_original        individual     late   H1_vs_H3        0.018    0.5407     ns
+v1_original        individual     late   H2_vs_H3        0.013    0.6753     ns
+v1_original        off            early  H1_vs_H2        0.011    0.7691     ns
+v1_original        off            early  H1_vs_H3        0.011    0.7646     ns
+v1_original        off            early  H2_vs_H3        0.001    0.9819     ns
+v1_original        off            mid    H1_vs_H2        0.017    0.5689     ns
+v1_original        off            mid    H1_vs_H3        0.026    0.3826     ns
+v1_original        off            mid    H2_vs_H3        0.043    0.1453     ns
+v1_original        off            late   H1_vs_H2        0.027    0.3625     ns
+v1_original        off            late   H1_vs_H3        0.022    0.4521     ns
+v1_original        off            late   H2_vs_H3        0.005    0.8663     ns
+v1_original        v1             early  H1_vs_H2        0.007    0.8379     ns
+v1_original        v1             early  H1_vs_H3        0.032    0.3851     ns
+v1_original        v1             early  H2_vs_H3        0.024    0.5140     ns
+v1_original        v1             mid    H1_vs_H2        0.026    0.3879     ns
+v1_original        v1             mid    H1_vs_H3        0.045    0.1332     ns
+v1_original        v1             mid    H2_vs_H3        0.019    0.5270     ns
+v1_original        v1             late   H1_vs_H2        0.053    0.0761     ns
+v1_original        v1             late   H1_vs_H3        0.038    0.2075     ns
+v1_original        v1             late   H2_vs_H3        0.015    0.6084     ns
+v3_front_loaded    coordinated    early  H1_vs_H2        0.018    0.6166     ns
+v3_front_loaded    coordinated    early  H1_vs_H3        0.017    0.6404     ns
+v3_front_loaded    coordinated    early  H2_vs_H3        0.003    0.9253     ns
+v3_front_loaded    coordinated    mid    H1_vs_H2        0.002    0.9484     ns
+v3_front_loaded    coordinated    mid    H1_vs_H3        0.029    0.3400     ns
+v3_front_loaded    coordinated    mid    H2_vs_H3        0.026    0.3764     ns
+v3_front_loaded    coordinated    late   H1_vs_H2        0.017    0.5801     ns
+v3_front_loaded    coordinated    late   H1_vs_H3        0.011    0.7147     ns
+v3_front_loaded    coordinated    late   H2_vs_H3        0.025    0.3916     ns
+v3_front_loaded    individual     early  H1_vs_H2        0.008    0.8244     ns
+v3_front_loaded    individual     early  H1_vs_H3        0.024    0.5157     ns
+v3_front_loaded    individual     early  H2_vs_H3        0.016    0.6641     ns
+v3_front_loaded    individual     mid    H1_vs_H2        0.013    0.6565     ns
+v3_front_loaded    individual     mid    H1_vs_H3        0.031    0.2930     ns
+v3_front_loaded    individual     mid    H2_vs_H3        0.046    0.1245     ns
+v3_front_loaded    individual     late   H1_vs_H2        0.018    0.5514     ns
+v3_front_loaded    individual     late   H1_vs_H3        0.026    0.3804     ns
+v3_front_loaded    individual     late   H2_vs_H3        0.008    0.7774     ns
+v3_front_loaded    off            early  H1_vs_H2        0.002    0.9643     ns
+v3_front_loaded    off            early  H1_vs_H3        0.006    0.8737     ns
+v3_front_loaded    off            early  H2_vs_H3        0.008    0.8270     ns
+v3_front_loaded    off            mid    H1_vs_H2        0.037    0.2121     ns
+v3_front_loaded    off            mid    H1_vs_H3        0.034    0.2539     ns
+v3_front_loaded    off            mid    H2_vs_H3        0.005    0.8651     ns
+v3_front_loaded    off            late   H1_vs_H2        0.019    0.5253     ns
+v3_front_loaded    off            late   H1_vs_H3        0.004    0.8925     ns
+v3_front_loaded    off            late   H2_vs_H3        0.015    0.6219     ns
+v3_plateau_high    coordinated    early  H1_vs_H2        0.004    0.9036     ns
+v3_plateau_high    coordinated    early  H1_vs_H3        0.002    0.9635     ns
+v3_plateau_high    coordinated    early  H2_vs_H3        0.005    0.8943     ns
+v3_plateau_high    coordinated    mid    H1_vs_H2        0.064    0.0323      *
+v3_plateau_high    coordinated    mid    H1_vs_H3        0.004    0.8953     ns
+v3_plateau_high    coordinated    mid    H2_vs_H3        0.061    0.0391      *
+v3_plateau_high    coordinated    late   H1_vs_H2        0.005    0.8721     ns
+v3_plateau_high    coordinated    late   H1_vs_H3        0.019    0.5304     ns
+v3_plateau_high    coordinated    late   H2_vs_H3        0.023    0.4357     ns
+v3_plateau_high    individual     early  H1_vs_H2        0.030    0.4087     ns
+v3_plateau_high    individual     early  H1_vs_H3        0.003    0.9265     ns
+v3_plateau_high    individual     early  H2_vs_H3        0.032    0.3838     ns
+v3_plateau_high    individual     mid    H1_vs_H2        0.009    0.7510     ns
+v3_plateau_high    individual     mid    H1_vs_H3        0.032    0.2839     ns
+v3_plateau_high    individual     mid    H2_vs_H3        0.024    0.4216     ns
+v3_plateau_high    individual     late   H1_vs_H2        0.072    0.0161      *
+v3_plateau_high    individual     late   H1_vs_H3        0.011    0.7243     ns
+v3_plateau_high    individual     late   H2_vs_H3        0.061    0.0416      *
+v3_plateau_high    off            early  H1_vs_H2        0.019    0.6108     ns
+v3_plateau_high    off            early  H1_vs_H3        0.015    0.6922     ns
+v3_plateau_high    off            early  H2_vs_H3        0.003    0.9250     ns
+v3_plateau_high    off            mid    H1_vs_H2        0.057    0.0566     ns
+v3_plateau_high    off            mid    H1_vs_H3        0.013    0.6754     ns
+v3_plateau_high    off            mid    H2_vs_H3        0.044    0.1397     ns
+v3_plateau_high    off            late   H1_vs_H2        0.009    0.7763     ns
+v3_plateau_high    off            late   H1_vs_H3        0.012    0.6923     ns
+v3_plateau_high    off            late   H2_vs_H3        0.021    0.4910     ns
+v3_realistic       coordinated    early  H1_vs_H2        0.004    0.9162     ns
+v3_realistic       coordinated    early  H1_vs_H3        0.001    0.9725     ns
+v3_realistic       coordinated    early  H2_vs_H3        0.004    0.9052     ns
+v3_realistic       coordinated    mid    H1_vs_H2        0.021    0.4734     ns
+v3_realistic       coordinated    mid    H1_vs_H3        0.031    0.2943     ns
+v3_realistic       coordinated    mid    H2_vs_H3        0.010    0.7423     ns
+v3_realistic       coordinated    late   H1_vs_H2        0.042    0.1601     ns
+v3_realistic       coordinated    late   H1_vs_H3        0.006    0.8344     ns
+v3_realistic       coordinated    late   H2_vs_H3        0.035    0.2426     ns
+v3_realistic       individual     early  H1_vs_H2        0.004    0.9195     ns
+v3_realistic       individual     early  H1_vs_H3        0.024    0.5152     ns
+v3_realistic       individual     early  H2_vs_H3        0.019    0.5942     ns
+v3_realistic       individual     mid    H1_vs_H2        0.019    0.5211     ns
+v3_realistic       individual     mid    H1_vs_H3        0.015    0.6190     ns
+v3_realistic       individual     mid    H2_vs_H3        0.005    0.8621     ns
+v3_realistic       individual     late   H1_vs_H2        0.014    0.6461     ns
+v3_realistic       individual     late   H1_vs_H3        0.020    0.4981     ns
+v3_realistic       individual     late   H2_vs_H3        0.006    0.8352     ns
+v3_realistic       off            early  H1_vs_H2        0.006    0.8786     ns
+v3_realistic       off            early  H1_vs_H3        0.020    0.5815     ns
+v3_realistic       off            early  H2_vs_H3        0.012    0.7393     ns
+v3_realistic       off            mid    H1_vs_H2        0.009    0.7724     ns
+v3_realistic       off            mid    H1_vs_H3        0.028    0.3499     ns
+v3_realistic       off            mid    H2_vs_H3        0.037    0.2117     ns
+v3_realistic       off            late   H1_vs_H2        0.051    0.0845     ns
+v3_realistic       off            late   H1_vs_H3        0.020    0.4954     ns
+v3_realistic       off            late   H2_vs_H3        0.030    0.3168     ns
+
+------------------------------------------------------------------------------------------
+EMERGENT TARGET RATIO DISCRIMINATION (spot check: early phase H1 vs H2)
+------------------------------------------------------------------------------------------
+profile            rationing             r         p    sig
+v1_original        coordinated       0.356    0.0000    ***
+v1_original        individual        0.458    0.0000    ***
+v1_original        off               0.504    0.0000    ***
+v1_original        v1                0.400    0.0000    ***
+v3_front_loaded    coordinated       0.580    0.0000    ***
+v3_front_loaded    individual        0.662    0.0000    ***
+v3_front_loaded    off               0.656    0.0000    ***
+v3_plateau_high    coordinated       0.588    0.0000    ***
+v3_plateau_high    individual        0.672    0.0000    ***
+v3_plateau_high    off               0.674    0.0000    ***
+v3_realistic       coordinated       0.706    0.0000    ***
+v3_realistic       individual        0.722    0.0000    ***
+v3_realistic       off               0.714    0.0000    ***
+
+==========================================================================================
+HEADLINE FINDING
+==========================================================================================
+  v3_realistic + coordinated, early  phase: p=0.9162, r=+0.004  -> MASKED (null result holds)
+  v3_realistic + coordinated, mid    phase: p=0.4734, r=+0.021  -> MASKED (null result holds)
+  v3_realistic + coordinated, late   phase: p=0.1601, r=+0.042  -> MASKED (null result holds)
+
+  v1 reference (early H1_vs_H2): p=0.8379, r=+0.007
+  (should reproduce the paper's v1 null result)
