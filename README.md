@@ -2,7 +2,7 @@
 
 Companion code and data for:
 
-> Daniyel Yaacov Bilar. "Launcher Attrition Dominates Command Architecture: Agent-Based Analysis of IRGC Missile C2 Degradation in the 2026 Iran War." *MILCOM 2026* (submitted).
+> Daniyel Yaacov Bilar. "Launcher Attrition Dominates Command Architecture: Agent-Based Analysis of IRGC Missile C2 Degradation in the 2026 Iran War." 
 
 **Author:** Daniyel Yaacov Bilar, Chokmah LLC  
 **Contact:** chokmah-dyb@pm.me  
@@ -67,6 +67,73 @@ python generate_figures.py
 Reads `../data/sensitivity_results.csv`, writes SVGs to `../figures/`.
 
 Pre-computed outputs for all steps are already in `data/` and `figures/` if you want to skip re-running the simulation.
+
+---
+
+## v4.0: Magazine-Discipline Validation (April 13, 2026)
+
+Paper version 4.0 adds Section V-D, validating the magazine-discipline
+conjecture from v2/v3 via a 1,800-run re-simulation under post-conflict
+attrition profiles. The null result on launch-rate discrimination is
+reproduced in 107 of 108 tests.
+
+### Running the v4 experiment
+
+```bash
+cd simulation
+python workstream_a_runner.py    # ~1 min, writes data_v3/wsA_*
+python generate_figures_v3.py    # writes figures/fig4_*.svg, fig5_*.svg
+```
+
+`workstream_a_runner.py` must run before `generate_figures_v3.py`
+(Fig. 5 reads from `wsA_daily_timeseries.csv`).
+
+### What's new in c2_core.py
+
+Three new attrition profiles calibrated to 40-50% survival at the
+April 8 ceasefire:
+
+- `v1_original` — March 23 calibration (invalidated by post-conflict IC)
+- `v3_realistic` — gradual decline, 45% at d39
+- `v3_front_loaded` — fast early kill, plateau at 42%
+- `v3_plateau_high` — steep initial drop, 49% plateau
+
+Three magazine-discipline rationing modes:
+
+- `off` — no rationing beyond base firing rate
+- `individual` — per-cell sigmoid gate on magazine depletion
+- `coordinated` — adds force-wide scarcity signal
+
+`run_single` accepts both as keyword arguments. Defaults (`v1_original`,
+`v1`) reproduce v1 paper output bit-for-bit.
+
+### v4 headline results
+
+| Finding | Value |
+|---|---|
+| Launch rate H1 vs H2, v3_realistic + coordinated, early | p = 0.92, r = +0.004 (ns) |
+| Launch rate H1 vs H2, all phases under v3_realistic | 9 of 9 tests p > 0.05 |
+| Full grid null: 4 profiles x 3 modes x 3 phases x 3 pairs | 107 of 108 ns |
+| Emergent target ratio H1 vs H2, v3_realistic | r = 0.706, p < 0.001 |
+| v1 reference reproduction | matches published null |
+
+### Verifying the refactor didn't break v1
+
+```bash
+cd simulation
+python sensitivity_analysis.py
+diff ../data/sensitivity_results.csv ../data/sensitivity_results_v1_archive.csv
+```
+
+Should produce no output. If you didn't archive `sensitivity_results.csv`
+before applying the refactor, check out the v1.0 tag and regenerate:
+
+```bash
+git checkout v1.0 -- simulation/
+python simulation/sensitivity_analysis.py   # writes v1 CSV
+git checkout main -- simulation/
+python simulation/sensitivity_analysis.py   # writes v4 CSV (same content)
+```
 
 ---
 
