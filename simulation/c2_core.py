@@ -56,6 +56,21 @@ REGIONS = ["west_iran", "east_azerbaijan", "central_iran", "south_coast", "north
 # Pre-war ~420 launchers; 120 cells × ~3.5 TELs avg
 REGION_CELL_COUNTS = [30, 25, 28, 20, 17]  # 120 cells total
 
+# ── Phase II tempo constants (residual low-attrition regime) ────────
+# Standing cadence is deliberately low so standing fire does not swamp the
+# provocation-response signal. A connected adaptive cell inside a provocation
+# window fires at P2_RESPONSE. Suppression scales fire prob by the same
+# 0.15/0.45 ratio the acute model uses.
+P2_STANDING = 0.03
+# (P2_RESPONSE removed: tempo is exogenous and flat across hypotheses.)
+P2_SUPPRESS_FACTOR = 0.15 / 0.45
+# Probability an adaptive, connected cell actually retaliates against the
+# current provoker in an open window (vs firing at standing targets). Adaptive
+# does not mean always-retaliate; this keeps H1 off a degenerate perfect score
+# and produces realistic per-run variance. H3 adaptive cells retaliate at
+# P2_RETAL_Q * 0.65 (the v4 mixed-adaptation fraction).
+P2_RETAL_Q = 0.65
+
 # ── Target set ─────────────────────────────────────────────────────
 
 def build_targets():
@@ -168,6 +183,13 @@ def compute_launcher_attrition(day, profile="v1_original"):
         else:
             return max(0.48, 0.52 - (0.001 * (day - 12)))
 
+    if profile == "phase2_residual":
+        # Phase II low-attrition residual-force regime. The acute-attrition
+        # phase is already over: the force starts at the ~42% ceasefire
+        # survival estimate and drifts down slowly (near-flat), never
+        # swamping the target-selection signal. Floor at 36%.
+        return max(0.36, 0.42 - 0.0007 * day)
+
     raise ValueError(f"Unknown attrition profile: {profile}")
 
 def apply_attrition_to_cells(cells, day, rng,
@@ -204,12 +226,21 @@ def apply_attrition_to_cells(cells, day, rng,
 
 # ── C2 connectivity model ─────────────────────────────────────────
 
-def compute_connectivity(day, region, rng):
+def compute_connectivity(day, region, rng, residual_p=None):
     """
     Per-region probability that a cell still has C2 contact today.
     Supreme HQ destroyed day 0; sector commands hit days 3-7;
     provincial nodes degraded progressively.
+
+    Phase II hook: `residual_p` overrides the campaign decay with a flat
+    reconstituted-C2 connection probability, uniform across regions. This
+    models a residual force that has re-established horizontal C2 past the
+    acute phase. It is the paper's load-bearing assumption and is SWEPT
+    (not fixed) by phase2_runner. residual_p=None reproduces v1 behavior.
     """
+    if residual_p is not None:
+        return rng.random() < residual_p
+
     base_p = {
         "west_iran": 0.9,
         "east_azerbaijan": 0.85,
@@ -273,7 +304,9 @@ def magazine_fire_probability(cell, force_state, rationing_mode, base=0.45):
 
 def cell_decide(cell, day, targets, hypothesis, connected, rng,
                 rationing_mode="v1",
-                force_state=None):
+                force_state=None,
+                tempo_mode="v1",
+                active_provocations=None):
     """
     Returns target_id or None.
 
@@ -281,35 +314,72 @@ def cell_decide(cell, day, targets, hypothesis, connected, rng,
     for Workstream A. "v1" reproduces the original day-block rationing
     (no magazine sigmoid, no force-wide signal). Workstream A will add
     "off", "individual", "coordinated".
+
+    Phase II hook: tempo_mode="phase2" replaces the acute-campaign fire gate
+    with a low standing cadence. When an adaptive cell (H1/H3) is connected and
+    a provocation window is open, it retaliates directly against a current provoker
+    with probability P2_RETAL_Q
+    (`active_provocations` is the list of open provoker ids); otherwise it falls
+    through to the UNCHANGED hypothesis dispatch. Fire rate is flat and exogenous,
+    so only targeting differs by hypothesis. tempo_mode="v1" reproduces v1 exactly.
     """
     if not cell.alive or cell.missiles <= 0:
         return None
 
-    base_fire_prob = 0.45 if not cell.suppressed else 0.15
-
-    if rationing_mode == "v1":
-        if rng.random() > base_fire_prob:
-            return None
-        # Original day-block rationing
-        if day < 3:
-            pass
-        elif day < 10:
-            if rng.random() > 0.6:
-                return None
-        else:
-            if rng.random() > 0.4:
-                return None
-    else:
-        # v3 magazine discipline: single probabilistic gate, no day-blocks.
-        # Suppression still modulates the base rate.
-        p_fire = magazine_fire_probability(
-            cell, force_state, rationing_mode,
-            base=(0.45 if not cell.suppressed else 0.15),
-        )
+    if tempo_mode == "phase2":
+        # Tempo is held EXOGENOUS and equal across hypotheses: every cell fires
+        # at the same low standing rate regardless of C2 state. This mirrors the
+        # v4 modeling philosophy (C2 changes WHAT is hit, not HOW MUCH), so
+        # launch volume cannot by construction discriminate the hypotheses; only
+        # target selection can. What connectivity gates is RETARGETING, not rate.
+        p_fire = P2_STANDING
+        if cell.suppressed:
+            p_fire *= P2_SUPPRESS_FACTOR
         if rng.random() > p_fire:
             return None
+        if active_provocations and connected and hypothesis in ("H1", "H3"):
+            q = P2_RETAL_Q if hypothesis == "H1" else P2_RETAL_Q * 0.65
+            if rng.random() < q:
+                # deliberate retaliation against a currently-open provoker
+                return rng.choice(active_provocations)
+        # non-retaliating fire: same selection logic, but guarantee a launch so
+        # volume stays exogenous and equal across hypotheses.
+        tid = _select_target(cell, day, targets, hypothesis, connected, rng)
+        if tid is None:
+            tid = _phase2_fallback(cell, targets, rng)
+        return tid
+    else:
+        base_fire_prob = 0.45 if not cell.suppressed else 0.15
+
+        if rationing_mode == "v1":
+            if rng.random() > base_fire_prob:
+                return None
+            # Original day-block rationing
+            if day < 3:
+                pass
+            elif day < 10:
+                if rng.random() > 0.6:
+                    return None
+            else:
+                if rng.random() > 0.4:
+                    return None
+        else:
+            # v3 magazine discipline: single probabilistic gate, no day-blocks.
+            # Suppression still modulates the base rate.
+            p_fire = magazine_fire_probability(
+                cell, force_state, rationing_mode,
+                base=(0.45 if not cell.suppressed else 0.15),
+            )
+            if rng.random() > p_fire:
+                return None
 
     # Hypothesis dispatch
+    return _select_target(cell, day, targets, hypothesis, connected, rng)
+
+
+def _select_target(cell, day, targets, hypothesis, connected, rng):
+    """The v1/v3 target-selection dispatch, unchanged. Extracted so the Phase II
+    path can reuse it verbatim and then apply a guaranteed-launch fallback."""
     if hypothesis == "H1":
         if connected:
             available = [t for t in targets.values() if t.active_since <= day]
@@ -326,6 +396,16 @@ def cell_decide(cell, day, targets, hypothesis, connected, rng,
             return available[0].id if available else None
         return _pick_pre_auth(cell, day, rng)
     return None
+
+
+def _phase2_fallback(cell, targets, rng):
+    """Guarantee a launch once the flat fire gate has fired, so launch VOLUME is
+    exogenous and equal across hypotheses (only targeting differs). A residual
+    pre-programmed force keeps firing its list rather than going silent."""
+    if cell.pre_auth_targets:
+        return rng.choice(cell.pre_auth_targets)
+    prewar = [t.id for t in targets.values() if t.active_since == 0]
+    return rng.choice(prewar) if prewar else None
 
 def _pick_pre_auth(cell, day, rng):
     if day > cell.pre_auth_expiry:
@@ -354,22 +434,133 @@ def emergent_ratio(launches, targets):
     return sum(1 for t in launches
                if targets.get(t) and targets[t].active_since > 0) / len(launches)
 
+# ── Phase II: provocations and attribution correlation ─────────────
+
+def build_provocations(rng, n_prov, window_days, sim_days, prov_value,
+                       pre_war, p_standing=0.5):
+    """
+    Build a provocation schedule for one run. Each provocation is a coalition
+    action with a source asset S that Iran may retaliate against within
+    [t_p, t_p + W].
+
+    Two kinds, mixed by p_standing (this is what makes the metric informative
+    rather than circular):
+      "novel"    : a fresh post-initiation asset (new deployment). Not in any
+                   pre-war package, so H2 CANNOT strike it. Spawns an emergent
+                   Target (active_since = t_p).
+      "standing" : the provoker is an existing pre-war target (e.g. a base that
+                   was always on the list and just conducted a strike). H2 can
+                   hit it by coincidence through its normal pre-auth firing;
+                   H1 hits it more via adaptive retargeting. This is the
+                   attribution-laundering / coincidence floor of codebook §8.
+
+    `pre_war` is a list of (tid, value) for the pre-war target set. Provocation
+    salience (prov_value) is set above the max pre-war value so an adaptive,
+    connected cell prioritizes the provoker while its window is open.
+
+    Returns (provocations, prov_targets):
+      provocations: list of {"t_p","S","W","kind","base_value"}
+      prov_targets: {S: Target}   (novel provokers only)
+    Call with an rng seeded independently of hypothesis so the schedule is
+    shared across H1/H2/H3 for a matched comparison.
+    """
+    provs, ptargets = [], {}
+    lo = 5
+    hi = max(lo + 1, sim_days - window_days - 2)
+    pre_war_tids = [tid for tid, _ in pre_war]
+    for i in range(n_prov):
+        frac = (i + 0.5) / n_prov
+        base = lo + frac * (hi - lo)
+        t_p = int(round(base + rng.uniform(-2.0, 2.0)))
+        t_p = max(1, min(sim_days - 1, t_p))
+        if rng.random() < p_standing:
+            tid = rng.choice(pre_war_tids)
+            base_value = dict(pre_war)[tid]
+            provs.append({"t_p": t_p, "S": tid, "W": window_days,
+                          "kind": "standing", "base_value": base_value})
+        else:
+            S = f"T_prov_{i}"
+            provs.append({"t_p": t_p, "S": S, "W": window_days,
+                          "kind": "novel", "base_value": 0.0})
+            ptargets[S] = Target(S, prov_value, t_p, mobile=True)
+    return provs, ptargets
+
+
+def attribution_correlation(launch_log, provocations, window_days):
+    """
+    In-sim analog of the empirical attribution-correlation construct.
+
+    A launch is attribution-correlated if it strikes the specific provocation
+    source S within [t_p, t_p + W]. Returns two rates (both reported, primary
+    chosen later) plus the latency list:
+      d_all : correlated / all residual-phase launches   (matches empirical 4.5/7)
+      d_win : correlated / launches fired while any window is open (response rate)
+      latencies : (day - t_p) for each correlated launch  (sim analog of ~24h median)
+    """
+    total = len(launch_log)
+    correlated = 0
+    windowed_total = 0
+    latencies = []
+    for (day, tid) in launch_log:
+        in_window = False
+        matched = False
+        for pr in provocations:
+            if pr["t_p"] <= day <= pr["t_p"] + window_days:
+                in_window = True
+                if tid == pr["S"]:
+                    matched = True
+                    latencies.append(day - pr["t_p"])
+        if in_window:
+            windowed_total += 1
+        if matched:
+            correlated += 1
+    d_all = correlated / total if total else 0.0
+    d_win = correlated / windowed_total if windowed_total else 0.0
+    return d_all, d_win, latencies
+
+
+def overall_emergent_ratio(launch_log, emergent_tids):
+    """Fraction of all launches that hit any emergent target (active_since>0).
+    This is the full v4 emergent-ratio signal; attribution correlation is its
+    observable subset. The ratio of the two effect sizes is the paper's gap."""
+    if not launch_log:
+        return 0.0
+    return sum(1 for (_, tid) in launch_log if tid in emergent_tids) / len(launch_log)
+
+
 # ── Single-run driver ──────────────────────────────────────────────
 
 def run_single(hypothesis, pre_auth_range, seed=42, days=75,
                attrition_profile="v1_original",
                rationing_mode="v1",
-               lam=0.0):
+               lam=0.0,
+               tempo_mode="v1",
+               residual_p=None,
+               provocations=None,
+               prov_targets=None,
+               prov_value=1.0,
+               return_log=False):
     """
     One Monte Carlo run.
 
     v1 call sites that pass only (hypothesis, pre_auth_range, seed, days) get
     bit-for-bit identical results to the original sensitivity_analysis.py
     because all v3 hooks default to "v1" / "v1_original" / 0.0.
+
+    Phase II params (all default to no-op so v1/v3 parity is preserved):
+      tempo_mode    "phase2" enables provocation-gated low tempo.
+      residual_p    flat reconstituted connectivity (swept); None = v1 decay.
+      provocations  schedule from build_provocations(); shared across hypotheses.
+      prov_targets  the provocation Target objects, merged into the target set.
+      prov_value    salience premium for an open provocation window.
+      return_log    if True, also return (launch_log, provocations).
     """
     rng = random.Random(seed)
     cells, targets = build_cells(rng, pre_auth_range)
+    if prov_targets:
+        targets.update(prov_targets)
     daily = []
+    launch_log = []
 
     for day in range(days):
         apply_attrition_to_cells(cells, day, rng,
@@ -383,19 +574,30 @@ def run_single(hypothesis, pre_auth_range, seed=42, days=75,
             "initial_cells": len(cells),
         }
 
+        # Phase II: list provoker ids whose window is open today.
+        active_provocations = None
+        if provocations:
+            open_ids = [pr["S"] for pr in provocations
+                        if pr["t_p"] <= day <= pr["t_p"] + pr["W"]]
+            active_provocations = open_ids if open_ids else None
+
         all_launches = []
         region_counts = defaultdict(int)
 
         for cid, cell in cells.items():
-            connected = compute_connectivity(day, cell.region, rng)
+            connected = compute_connectivity(day, cell.region, rng,
+                                             residual_p=residual_p)
             cell.connected_to_hq = connected
             tid = cell_decide(cell, day, targets, hypothesis, connected, rng,
                               rationing_mode=rationing_mode,
-                              force_state=force_state)
+                              force_state=force_state,
+                              tempo_mode=tempo_mode,
+                              active_provocations=active_provocations)
             if tid:
                 cell.missiles -= 1
                 cell.total_launches += 1
                 all_launches.append(tid)
+                launch_log.append((day, tid))
                 region_counts[cell.region] += 1
 
         alive_n = sum(1 for c in cells.values() if c.alive)
@@ -411,4 +613,6 @@ def run_single(hypothesis, pre_auth_range, seed=42, days=75,
             "entropy": round(target_entropy(all_launches), 4),
             "emergent_ratio": round(emergent_ratio(all_launches, targets), 4),
         })
+    if return_log:
+        return daily, launch_log, provocations
     return daily

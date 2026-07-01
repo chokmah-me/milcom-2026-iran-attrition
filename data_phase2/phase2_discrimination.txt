@@ -1,0 +1,32 @@
+PHASE II LEG 1 — ATTRITION-CORRELATION DISCRIMINATION
+====================================================================
+seeds=200  days=60  n_prov=8  prov_value=1.2  runtime=30.4s
+Metric: H1 (adaptive) vs H2 (pre-programmed). r = rank-biserial (+ means H1>H2).
+D_all = correlated/all strikes ; D_win = correlated/in-window strikes
+EMR = full emergent ratio (unobservable v4-style comparator). CTX = r(D_all) vs r(EMR): observable proxy vs unobservable ceiling (not a strict ratio).
+
+--- WINDOW W=3d  PRIMARY (72h) ---
+ c_res |   r(LR)   p(LR) |  r(D_all)       p      d |  r(D_win) |  r(EMR) | H1 Dall    H2     H3 |  lat
+  0.20 |   0.001   0.980 |     0.926  0.0000   2.45 |     0.934 |   0.990 |   0.089  0.02  0.059 |  1.0
+  0.35 |  -0.054   0.348 |     0.992  0.0000   3.48 |     0.994 |   1.000 |   0.129  0.02  0.089 |  2.0
+  0.50 |  -0.008   0.896 |     1.000  0.0000   4.52 |     1.000 |   1.000 |   0.181  0.02  0.121 |  2.0
+  0.65 |   0.036   0.533 |     1.000  0.0000   5.05 |     1.000 |   1.000 |   0.220  0.02  0.153 |  2.0
+
+--- WINDOW W=2d  ROBUSTNESS (48h) ---
+ c_res |   r(LR)   p(LR) |  r(D_all)       p      d |  r(D_win) |  r(EMR) | H1 Dall    H2     H3 |  lat
+  0.20 |  -0.039   0.504 |     0.828  0.0000   1.85 |     0.837 |   0.965 |   0.063  0.01  0.043 |  1.0
+  0.35 |   0.079   0.170 |     0.979  0.0000   3.08 |     0.986 |   0.995 |   0.101  0.01  0.073 |  1.0
+  0.50 |  -0.092   0.113 |     0.998  0.0000   3.82 |     0.999 |   1.000 |   0.139  0.01  0.096 |  1.0
+  0.65 |  -0.052   0.371 |     0.999  0.0000   4.11 |     1.000 |   1.000 |   0.170  0.01  0.115 |  1.0
+
+READ:
+  r(LR): launch-rate discrimination H1 vs H2 on the SAME runs. Near 0 / p>0.05
+    reproduces the v4 null: launch volume is blind to C2 state here too.
+  r(D_all): the observable attribution-correlation proxy. High + p<0.001 means
+    the discriminator that launch rate cannot see becomes sharp once attrition
+    stops swamping targeting. The LR-vs-D_all contrast on identical runs is the
+    paper's core result.
+  r(EMR): the v4-style full emergent ratio (unobservable ceiling), for context.
+  H2 D_all > 0 is the coincidence floor (standing provokers, codebook §8).
+  Separation is near-complete because H1/H2 are idealized archetypes; the real
+  force is a mixture (cf. H3, and empirical Stream B ~0.64).
