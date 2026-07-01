@@ -1,0 +1,30 @@
+{
+  "title": "Launcher Attrition Dominates Command Architecture: Agent-Based Analysis of IRGC Missile C2 Degradation in the 2026 Iran War",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Bilar, Daniyel Yaacov",
+      "affiliation": "Chokmah LLC"
+    }
+  ],
+  "keywords": [
+    "ballistic missile defense",
+    "agent-based modeling",
+    "command and control",
+    "launcher attrition",
+    "Iran",
+    "OSINT",
+    "Monte Carlo simulation",
+    "magazine discipline",
+    "contested ISR"
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.19547033",
+      "relation": "isNewVersionOf",
+      "scheme": "doi"
+    }
+  ]
+}
