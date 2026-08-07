@@ -10,16 +10,22 @@ Companion code and data for:
 **Paper DOI:** 10.5281/zenodo.19558494 (v4.0)
 **License:** Code: MIT. Paper and data: CC-BY 4.0. See [LICENSE](LICENSE) and [LICENSE-DATA](LICENSE-DATA).
 
+**Claim gate (new):** `python verify_milcom_claims.py` — thin re-run of magazine-discipline null + sim smoke (~2s, stdlib). See [Quickstart](#quickstart), [Computational claim gate](#computational-claim-gate-thin-mc), and [CHANGELOG.md](CHANGELOG.md).
+
 ---
 
 ## What this repo contains
 
 ```
-simulation/         Python simulation code (stdlib only, no dependencies)
-figures/            Publication SVG figures (Figs 1-3)
-artifacts/          Interactive JSX dashboards for browser exploration
-data/               Pre-computed CSV results and plain-text reports
-paper/              Paper manuscript (placeholder pending review)
+simulation/              Python simulation code (stdlib only, no dependencies)
+verify_milcom_claims.py  Computational claim gate (thin MC) — NEW
+claim-manifest.json      Claim-gate manifest (cd-claim-gate/v1) — NEW
+results/                 Gate evidence + claim-holds brief — NEW
+figures/                 Publication SVG figures (Figs 1-3)
+artifacts/               Interactive JSX dashboards for browser exploration
+data/                    Pre-computed CSV results and plain-text reports
+paper/                   Paper manuscript (placeholder pending review)
+CHANGELOG.md
 ```
 
 ---
@@ -30,11 +36,36 @@ Python 3.8 or later. No external dependencies. The entire simulation stack uses 
 
 ---
 
+## Quickstart
+
+```bash
+git clone https://github.com/chokmah-me/milcom-2026-iran-attrition
+cd milcom-2026-iran-attrition
+
+# 1) Claim gate first (~2s): H1–H3 smoke + magazine-discipline null (thin MC)
+#    Exit 0 = load-bearing null still holds under n_runs=20 (not full 50-run grid)
+python verify_milcom_claims.py
+
+# 2) Full v4 Workstream A grid (~1 min) — publication-scale null table
+cd simulation
+python workstream_a_runner.py
+```
+
+Pre-computed `data/` and `figures/` are already in the tree if you only need archived outputs. Full step-by-step reproduce: [Reproducing the results](#reproducing-the-results).
+
+---
+
 ## Computational claim gate (thin MC)
 
-Load-bearing simulation claims (smoke + magazine-discipline H1-vs-H2 null under
-`v3_realistic`/`coordinated`, plus v1 reference null) are gated by a thin harness
-— not a substitute for the full Workstream A grid.
+**What it is.** A fast, seeded harness that re-runs the paper’s *load-bearing simulation* claims (magazine-discipline null) and fails with a clear reason if they break. Prefer this after any edit to `c2_core.py` or attrition/rationing modes.
+
+**Checked (thin MC, n_runs=20):**
+
+- H1/H2/H3 produce valid daily series; launches > 0; attrition reduces force size
+- **Magazine-discipline null:** early launch totals do not discriminate H1 from H2 under `v3_realistic` + `coordinated` (p > 0.05, small rank-biserial r)
+- **v1 reference null:** same for `v1_original` + rationing `v1`
+
+**Not checked:** full 4×3×50 grid; published 107/108 null count; phase2 suite; figure regeneration. Policy: `results/claim-holds-brief.md`. Changelog: [CHANGELOG.md](CHANGELOG.md).
 
 ```bash
 # From this repo root (stdlib only)
@@ -44,11 +75,13 @@ python verify_milcom_claims.py
 python path/to/computational-claim-gate/scripts/verify_claim_project.py --project .
 ```
 
-Manifest: `claim-manifest.json`. Policy and non-claims: `results/claim-holds-brief.md`.
+Manifest: `claim-manifest.json` (claim id `milcom-magazine-null`).
 
 ---
 
 ## Reproducing the results
+
+The claim gate above is the **fast** check. Steps below regenerate publication artifacts.
 
 Run from the `simulation/` directory.
 
