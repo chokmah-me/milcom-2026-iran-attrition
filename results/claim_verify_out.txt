@@ -1,0 +1,28 @@
+computational-claim-gate verify  ok=True
+schema: cd-claim-gate/v1
+project: C:\Users\Elke Shayna\Documents\00Dev\milcom-2026-iran-attrition
+manifest: C:\Users\Elke Shayna\Documents\00Dev\milcom-2026-iran-attrition\claim-manifest.json
+timestamp: 2026-08-07T00:09:22.021999+00:00
+claims: 1
+
+## claim milcom-magazine-null  ok=True  exit=0  ms=2403
+cmd: ['python', 'verify_milcom_claims.py']
+--- log tail ---
+verify_milcom_claims.py — computational claim gate (thin MC)
+n_runs=20 days=40 (paper workstream uses 50 runs)
+non-claims: full grid null count 107/108; phase2; figures
+
+OK:   smoke H1: launches=226 alive 120->21 over 20 days
+OK:   smoke H2: launches=230 alive 120->21 over 20 days
+OK:   smoke H3: launches=230 alive 120->21 over 20 days
+
+[magazine-discipline] v3_realistic+coordinated early H1_vs_H2: n=20 p=0.6849 r=0.0750 d=0.1071 mean H1=378.2 H2=376.4
+OK:   magazine-discipline: p=0.6849 > 0.05 (null holds)
+OK:   magazine-discipline: |effect| r=0.0750 < 0.25
+
+[v1-reference] v1_original+v1 early H1_vs_H2: n=20 p=0.8817 r=0.0275 d=0.1610 mean H1=197.8 H2=196.1
+OK:   v1-reference: p=0.8817 > 0.05 (null holds)
+OK:   v1-reference: |effect| r=0.0275 < 0.25
+
+wrote C:\Users\Elke Shayna\Documents\00Dev\milcom-2026-iran-attrition\results\milcom_claim_verify.json  elapsed=2.1s
+ALL CHECKS PASSED

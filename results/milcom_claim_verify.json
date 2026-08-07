@@ -1,0 +1,67 @@
+{
+  "schema": "milcom-claim-verify/v1",
+  "ok": true,
+  "elapsed_sec": 2.146,
+  "smoke": {
+    "runs": [
+      {
+        "hypothesis": "H1",
+        "days": 20,
+        "total_launches": 226,
+        "alive0": 120,
+        "alive_last": 21
+      },
+      {
+        "hypothesis": "H2",
+        "days": 20,
+        "total_launches": 230,
+        "alive0": 120,
+        "alive_last": 21
+      },
+      {
+        "hypothesis": "H3",
+        "days": 20,
+        "total_launches": 230,
+        "alive0": 120,
+        "alive_last": 21
+      }
+    ],
+    "ok": true
+  },
+  "null_magazine_discipline": {
+    "ok": true,
+    "label": "magazine-discipline",
+    "profile": "v3_realistic",
+    "rationing": "coordinated",
+    "n_runs": 20,
+    "phase": "early_days_0_9_sum",
+    "comparison": "H1_vs_H2",
+    "p": 0.6849253186565316,
+    "rank_biserial_r": 0.07499999999999996,
+    "cohens_d": 0.10709746906869624,
+    "mean_h1": 378.2,
+    "mean_h2": 376.45,
+    "policy": {
+      "p_null_min": 0.05,
+      "r_null_max": 0.25
+    }
+  },
+  "null_v1_reference": {
+    "ok": true,
+    "label": "v1-reference",
+    "profile": "v1_original",
+    "rationing": "v1",
+    "n_runs": 20,
+    "phase": "early_days_0_9_sum",
+    "comparison": "H1_vs_H2",
+    "p": 0.8817307917391244,
+    "rank_biserial_r": 0.02749999999999997,
+    "cohens_d": 0.1610383808175756,
+    "mean_h1": 197.75,
+    "mean_h2": 196.05,
+    "policy": {
+      "p_null_min": 0.05,
+      "r_null_max": 0.25
+    }
+  }
+}

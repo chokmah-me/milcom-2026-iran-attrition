@@ -1,0 +1,11 @@
+{
+  "schema": "cd-claim-gate/v1",
+  "claims": [
+    {
+      "id": "milcom-magazine-null",
+      "description": "Thin MC: sim smoke + H1vsH2 launch-rate null under v3_realistic/coordinated and v1 reference (n_runs=20). Not full 50-run grid.",
+      "command": ["python", "verify_milcom_claims.py"],
+      "timeout_sec": 600
+    }
+  ]
+}

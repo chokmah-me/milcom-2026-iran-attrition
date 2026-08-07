@@ -30,6 +30,24 @@ Python 3.8 or later. No external dependencies. The entire simulation stack uses 
 
 ---
 
+## Computational claim gate (thin MC)
+
+Load-bearing simulation claims (smoke + magazine-discipline H1-vs-H2 null under
+`v3_realistic`/`coordinated`, plus v1 reference null) are gated by a thin harness
+— not a substitute for the full Workstream A grid.
+
+```bash
+# From this repo root (stdlib only)
+python verify_milcom_claims.py
+
+# Or via computational-claim-gate
+python path/to/computational-claim-gate/scripts/verify_claim_project.py --project .
+```
+
+Manifest: `claim-manifest.json`. Policy and non-claims: `results/claim-holds-brief.md`.
+
+---
+
 ## Reproducing the results
 
 Run from the `simulation/` directory.
