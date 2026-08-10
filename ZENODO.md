@@ -35,7 +35,8 @@ Paper PDFs and software zips use **separate Zenodo concepts**. Do not merge them
 
 - **GitHub:** https://github.com/chokmah-me/milcom-2026-iran-attrition  
 - **Catalog:** https://chokmah.me/research/below-the-masking-threshold-observable-command-and-c-21865794/  
-- **OSF (Phase II mirror):** https://osf.io/c8rgz/ (DOI [10.17605/OSF.IO/C8RGZ](https://doi.org/10.17605/OSF.IO/C8RGZ))  
+- **OSF (Phase II mirror):** https://osf.io/c8rgz/ (DOI [10.17605/OSF.IO/C8RGZ](https://doi.org/10.17605/OSF.IO/C8RGZ)) — CC-BY-4.0, tags, home wiki; Zenodo remains VoR  
+
 - **OSF (v4 paper mirror):** https://osf.io/tfkuc/  
 - **OSF (code mirror):** https://osf.io/j7chx/  
 - **Deposit craft:** `paper/ZENODO-PAPER-DESCRIPTION.md`, `paper/PAPER-SOFTWARE-BRIDGE.md`
