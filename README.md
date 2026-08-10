@@ -1,16 +1,27 @@
 # milcom-2026-iran-attrition
 
-Companion code and data for:
+Companion code and data for two related papers:
 
-> Daniyel Yaacov Bilar. "Launcher Attrition Dominates Command Architecture: Agent-Based Analysis of IRGC Missile C2 Degradation in the 2026 Iran War." 
+> **v4.** Daniyel Yaacov Bilar. "Launcher Attrition Dominates Command Architecture: Agent-Based Analysis of IRGC Missile C2 Degradation in the 2026 Iran War."
+
+> **Phase II.** Daniyel Yaacov Bilar. "Below the Masking Threshold: Observable Command-and-Control Discrimination in a Residual IRGC Missile Force."
 
 **Author:** Daniyel Yaacov Bilar, Chokmah LLC  
 **Contact:** chokmah-dyb@pm.me  
-**Code DOI:** 10.5281/zenodo.19558036 (v4.0)
-**Paper DOI:** 10.5281/zenodo.19558494 (v4.0)
+
+| Surface | DOI |
+|---------|-----|
+| **Phase II paper concept** (always latest PDF) | [10.5281/zenodo.21865793](https://doi.org/10.5281/zenodo.21865793) |
+| Phase II paper v0.2 (this PDF) | [10.5281/zenodo.21865794](https://doi.org/10.5281/zenodo.21865794) |
+| Phase II OSF mirror | [osf.io/c8rgz](https://osf.io/c8rgz/) ([10.17605/OSF.IO/C8RGZ](https://doi.org/10.17605/OSF.IO/C8RGZ)) |
+| v4 paper version | [10.5281/zenodo.19558494](https://doi.org/10.5281/zenodo.19558494) |
+| Software concept (always latest code) | [10.5281/zenodo.19210120](https://doi.org/10.5281/zenodo.19210120) |
+
+Full concept vs version map: [ZENODO.md](ZENODO.md).
+
 **License:** Code: MIT. Paper and data: CC-BY 4.0. See [LICENSE](LICENSE) and [LICENSE-DATA](LICENSE-DATA).
 
-**Claim gate (new):** `python verify_milcom_claims.py` — thin re-run of magazine-discipline null + sim smoke (~2s, stdlib). See [Quickstart](#quickstart), [Computational claim gate](#computational-claim-gate-thin-mc), and [CHANGELOG.md](CHANGELOG.md).
+**Claim gate:** `python verify_milcom_claims.py` — thin re-run of magazine-discipline null + sim smoke (~2s, stdlib). See [Quickstart](#quickstart), [Computational claim gate](#computational-claim-gate-thin-mc), and [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
@@ -18,13 +29,15 @@ Companion code and data for:
 
 ```
 simulation/              Python simulation code (stdlib only, no dependencies)
-verify_milcom_claims.py  Computational claim gate (thin MC) — NEW
-claim-manifest.json      Claim-gate manifest (cd-claim-gate/v1) — NEW
-results/                 Gate evidence + claim-holds brief — NEW
-figures/                 Publication SVG figures (Figs 1-3)
+verify_milcom_claims.py  Computational claim gate (thin MC)
+claim-manifest.json      Claim-gate manifest (cd-claim-gate/v1)
+results/                 Gate evidence + claim-holds brief
+figures/                 Publication figures (v4 SVGs + Phase II)
 artifacts/               Interactive JSX dashboards for browser exploration
 data/                    Pre-computed CSV results and plain-text reports
-paper/                   Paper manuscript (placeholder pending review)
+data_phase2/             Phase II discrimination outputs
+paper/                   Phase II FIXED PDF/source + coding tables + deposit craft
+ZENODO.md                Paper/software concept vs version DOI map
 CHANGELOG.md
 ```
 
@@ -223,6 +236,22 @@ Launcher attrition is calibrated as an exogenous three-phase curve against open-
 
 ## Citation
 
+**Phase II paper** (prefer concept DOI for always-latest PDF):
+
+```bibtex
+@article{bilar2026masking,
+  title   = {Below the Masking Threshold: Observable Command-and-Control
+             Discrimination in a Residual {IRGC} Missile Force},
+  author  = {Bilar, Daniyel Yaacov},
+  year    = {2026},
+  version = {0.2},
+  doi     = {10.5281/zenodo.21865793},
+  note    = {Version pin: 10.5281/zenodo.21865794; OSF mirror 10.17605/OSF.IO/C8RGZ}
+}
+```
+
+**Parent (v4) paper:**
+
 ```bibtex
 @inproceedings{bilar2026launcher,
   title     = {Launcher Attrition Dominates Command Architecture:
@@ -235,6 +264,8 @@ Launcher attrition is calibrated as an exogenous three-phase curve against open-
   doi       = {10.5281/zenodo.19558494}
 }
 ```
+
+**Software concept:** `10.5281/zenodo.19210120`. See [ZENODO.md](ZENODO.md) and [CITATION.cff](CITATION.cff).
 
 ---
 

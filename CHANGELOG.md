@@ -2,6 +2,31 @@
 
 All notable changes to this companion repository are documented here.
 
+## [Phase II paper v0.2] — 2026-08-09
+
+### Added
+
+- **Phase II preprint** deposited (PDF-only paper concept, separate from software):
+  - Concept DOI: [10.5281/zenodo.21865793](https://doi.org/10.5281/zenodo.21865793)
+  - Version DOI: [10.5281/zenodo.21865794](https://doi.org/10.5281/zenodo.21865794)
+  - File: `paper/PHASE2_C2_Observability_REL_FIXED.pdf`
+  - OSF mirror: [osf.io/c8rgz](https://osf.io/c8rgz/) ([10.17605/OSF.IO/C8RGZ](https://doi.org/10.17605/OSF.IO/C8RGZ))
+- Deposit craft (Chokmah Research Engine): `paper/ZENODO-PAPER-DESCRIPTION.md`,
+  `paper/PAPER-SOFTWARE-BRIDGE.md`
+- Repo DOI map: `ZENODO.md`
+- Citation surfaces updated: `CITATION.cff` (preferred-citation → Phase II concept),
+  README Phase II badges/bibtex, `paper/README.md`
+
+### Scientific content (paper v0.2)
+
+- Legs 1–3: residual-force ABM + sparse-window coding + July OOS / H_ceiling
+- Leg 2 retro-audit; count-corrected FIXED release
+
+### Notes
+
+- Paper concept ≠ software concept (`19210120`). Do not co-deposit PDF + zip.
+- Parent v4 paper remains [10.5281/zenodo.19558494](https://doi.org/10.5281/zenodo.19558494).
+
 ## [Unreleased] — 2026-08-07
 
 ### Added

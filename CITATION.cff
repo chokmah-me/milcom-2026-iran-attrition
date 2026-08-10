@@ -1,18 +1,20 @@
 cff-version: 1.2.0
-message: "If you use this software or data, please cite it as below."
+message: "If you use this software, data, or papers, please cite as below."
 type: software
 title: >
   Companion Code and Data: Launcher Attrition Dominates Command Architecture
+  (with Phase II residual-force C2 observability)
 authors:
   - family-names: Bilar
     given-names: Daniyel Yaacov
     affiliation: Chokmah LLC
     email: chokmah-dyb@pm.me
+    orcid: "https://orcid.org/0000-0002-9040-6914"
 repository-code: https://github.com/chokmah-me/milcom-2026-iran-attrition
 license: MIT
 version: "0.6.0"
 date-released: "2026-08-09"
-doi: 10.5281/zenodo.19210121
+doi: 10.5281/zenodo.19210120
 keywords:
   - agent-based modeling
   - ballistic missile defense
@@ -20,17 +22,24 @@ keywords:
   - Monte Carlo simulation
   - IRGC
   - Iran
+  - attribution correlation
+  - residual force
 preferred-citation:
-  type: conference-paper
+  type: article
   title: >
-    Launcher Attrition Dominates Command Architecture: Agent-Based Analysis
-    of IRGC Missile C2 Degradation in the 2026 Iran War
+    Below the Masking Threshold: Observable Command-and-Control Discrimination
+    in a Residual IRGC Missile Force
   authors:
     - family-names: Bilar
       given-names: Daniyel Yaacov
       affiliation: Chokmah LLC
-  conference:
-    name: MILCOM 2026
+      orcid: "https://orcid.org/0000-0002-9040-6914"
   year: 2026
-  doi: 10.5281/zenodo.19210121
-
+  month: 8
+  version: "0.2"
+  doi: 10.5281/zenodo.21865793
+  url: "https://doi.org/10.5281/zenodo.21865793"
+  notes: >
+    Prefer paper concept DOI for always-latest PDF. This version (v0.2) pin:
+    10.5281/zenodo.21865794. Parent v4 paper concept: 10.5281/zenodo.19210451.
+    Software concept (this repository): 10.5281/zenodo.19210120.
