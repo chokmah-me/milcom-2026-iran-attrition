@@ -21,7 +21,7 @@ Full concept vs version map: [ZENODO.md](ZENODO.md).
 
 **License:** Code: MIT. Paper and data: CC-BY 4.0. See [LICENSE](LICENSE) and [LICENSE-DATA](LICENSE-DATA).
 
-**Claim gate:** `python verify_milcom_claims.py` — thin re-run of magazine-discipline null + sim smoke (~2s, stdlib). See [Quickstart](#quickstart), [Computational claim gate](#computational-claim-gate-thin-mc), and [CHANGELOG.md](CHANGELOG.md).
+**Claim gates:** `python verify_milcom_claims.py` (v4 magazine-discipline null) and `python verify_phase2_claims.py` (Phase II residual LR-null + D_win discrimination + Leg3 null band). Or `verify_claim_project.py --project .` for both via `claim-manifest.json`. See [Computational claim gate](#computational-claim-gate-thin-mc).
 
 ---
 
@@ -55,9 +55,12 @@ Python 3.8 or later. No external dependencies. The entire simulation stack uses 
 git clone https://github.com/chokmah-me/milcom-2026-iran-attrition
 cd milcom-2026-iran-attrition
 
-# 1) Claim gate first (~2s): H1–H3 smoke + magazine-discipline null (thin MC)
-#    Exit 0 = load-bearing null still holds under n_runs=20 (not full 50-run grid)
+# 1) Claim gates first (~3s total): v4 magazine null + Phase II observability
+#    Exit 0 = load-bearing thin MC still holds (not full paper grids)
 python verify_milcom_claims.py
+python verify_phase2_claims.py
+# Or both via computational-claim-gate:
+# python path/to/computational-claim-gate/scripts/verify_claim_project.py --project .
 
 # 2) Full v4 Workstream A grid (~1 min) — publication-scale null table
 cd simulation
@@ -70,25 +73,29 @@ Pre-computed `data/` and `figures/` are already in the tree if you only need arc
 
 ## Computational claim gate (thin MC)
 
-**What it is.** A fast, seeded harness that re-runs the paper’s *load-bearing simulation* claims (magazine-discipline null) and fails with a clear reason if they break. Prefer this after any edit to `c2_core.py` or attrition/rationing modes.
+**What it is.** Fast, seeded harnesses that re-run *load-bearing simulation* claims and fail with a clear reason if they break. Prefer after edits to `c2_core.py`, attrition/rationing, residual tempo, or provocation mechanics.
 
-**Checked (thin MC, n_runs=20):**
+### Claim A — `milcom-magazine-null` (`verify_milcom_claims.py`, n_runs=20)
 
-- H1/H2/H3 produce valid daily series; launches > 0; attrition reduces force size
-- **Magazine-discipline null:** early launch totals do not discriminate H1 from H2 under `v3_realistic` + `coordinated` (p > 0.05, small rank-biserial r)
+- H1/H2/H3 smoke: valid series; launches > 0; attrition reduces force size
+- **Magazine-discipline null:** early launches do not discriminate H1 from H2 under `v3_realistic` + `coordinated`
 - **v1 reference null:** same for `v1_original` + rationing `v1`
 
-**Not checked:** full 4×3×50 grid; published 107/108 null count; phase2 suite; figure regeneration. Policy: `results/claim-holds-brief.md`. Changelog: [CHANGELOG.md](CHANGELOG.md).
+### Claim B — `milcom-phase2-observability` (`verify_phase2_claims.py`, n_seeds=20)
+
+- **Residual launch-rate null** at c_res ∈ {0.20, 0.50, 0.65}, W=3 (72h)
+- **D_win attribution discrimination:** H1 > H2 with large rank-biserial r on the same runs
+- **Leg 3 coding-scheme null band:** dense-provocation coincidence rate ∈ [0.55, 0.72] for the locked reference cell
+
+**Not checked:** full Workstream A 4×3×50 / 107/108; full Phase II 200-seed grid; empirical coding tables; figure regeneration. Policy: `results/claim-holds-brief.md`.
 
 ```bash
-# From this repo root (stdlib only)
 python verify_milcom_claims.py
-
-# Or via computational-claim-gate
+python verify_phase2_claims.py
 python path/to/computational-claim-gate/scripts/verify_claim_project.py --project .
 ```
 
-Manifest: `claim-manifest.json` (claim id `milcom-magazine-null`).
+Manifest: `claim-manifest.json`.
 
 ---
 

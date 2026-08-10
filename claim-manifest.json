@@ -6,6 +6,12 @@
       "description": "Thin MC: sim smoke + H1vsH2 launch-rate null under v3_realistic/coordinated and v1 reference (n_runs=20). Not full 50-run grid.",
       "command": ["python", "verify_milcom_claims.py"],
       "timeout_sec": 600
+    },
+    {
+      "id": "milcom-phase2-observability",
+      "description": "Thin MC Phase II: residual-regime launch-rate null + D_win H1>H2 discrimination (n_seeds=20, W=3, c_res subset); Leg3 dense-provocation coding null band. Not 200-seed full grid or empirical coding.",
+      "command": ["python", "verify_phase2_claims.py"],
+      "timeout_sec": 600
     }
   ]
 }

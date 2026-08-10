@@ -47,14 +47,15 @@ def run(n_events=1000, n_targets=8, p_attr=0.5, p_frame=1.0, window=3,
             scores.append(0.0)
     return statistics.mean(scores)
 
-print(f"{'p_frame':>8} {'p_attr':>7} {'prov/day':>9} {'null rate':>10}")
-for p_frame in (1.0, 0.8, 0.5):
-    for p_attr in (0.7, 0.5, 0.3):
-        for ppd in (1.0, 2.0):
-            r = run(p_frame=p_frame, p_attr=p_attr, provocations_per_day=ppd)
-            print(f"{p_frame:>8} {p_attr:>7} {ppd:>9} {r:>10.3f}")
+if __name__ == "__main__":
+    print(f"{'p_frame':>8} {'p_attr':>7} {'prov/day':>9} {'null rate':>10}")
+    for p_frame in (1.0, 0.8, 0.5):
+        for p_attr in (0.7, 0.5, 0.3):
+            for ppd in (1.0, 2.0):
+                r = run(p_frame=p_frame, p_attr=p_attr, provocations_per_day=ppd)
+                print(f"{p_frame:>8} {p_attr:>7} {ppd:>9} {r:>10.3f}")
 
-# Leg 2 sparse-regime reference: provocations rare (~1 per 2 weeks)
-print("\nSparse regime (Leg 2 conditions, ~1 provocation/14d, framing 0.8):")
-r = run(p_frame=0.8, p_attr=0.7, provocations_per_day=1/14)
-print(f"  null rate = {r:.3f}")
+    # Leg 2 sparse-regime reference: provocations rare (~1 per 2 weeks)
+    print("\nSparse regime (Leg 2 conditions, ~1 provocation/14d, framing 0.8):")
+    r = run(p_frame=0.8, p_attr=0.7, provocations_per_day=1 / 14)
+    print(f"  null rate = {r:.3f}")

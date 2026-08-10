@@ -2,6 +2,20 @@
 
 All notable changes to this companion repository are documented here.
 
+## [Unreleased] — 2026-08-10
+
+### Added
+
+- **Phase II claim gate** `verify_phase2_claims.py` (claim id `milcom-phase2-observability`):
+  thin MC residual LR-null + D_win discrimination + Leg 3 coding null band
+- `claim-manifest.json` now lists both magazine-null and phase2-observability
+- `results/phase2_claim_verify.json`; claim-holds brief updated
+
+### Notes
+
+- Publication augment (CRE / release-sync) does **not** own sim gates — see skill yield to
+  `computational-claim-gate`. Phase II had no gate entry until this change.
+
 ## [Phase II paper v0.2] — 2026-08-09
 
 ### Added

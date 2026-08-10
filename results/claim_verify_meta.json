@@ -12,15 +12,29 @@
         "verify_milcom_claims.py"
       ],
       "exit_code": 0,
-      "duration_ms": 2403,
-      "log_tail": "verify_milcom_claims.py \u2014 computational claim gate (thin MC)\nn_runs=20 days=40 (paper workstream uses 50 runs)\nnon-claims: full grid null count 107/108; phase2; figures\n\nOK:   smoke H1: launches=226 alive 120->21 over 20 days\nOK:   smoke H2: launches=230 alive 120->21 over 20 days\nOK:   smoke H3: launches=230 alive 120->21 over 20 days\n\n[magazine-discipline] v3_realistic+coordinated early H1_vs_H2: n=20 p=0.6849 r=0.0750 d=0.1071 mean H1=378.2 H2=376.4\nOK:   magazine-discipline: p=0.6849 > 0.05 (null holds)\nOK:   magazine-discipline: |effect| r=0.0750 < 0.25\n\n[v1-reference] v1_original+v1 early H1_vs_H2: n=20 p=0.8817 r=0.0275 d=0.1610 mean H1=197.8 H2=196.1\nOK:   v1-reference: p=0.8817 > 0.05 (null holds)\nOK:   v1-reference: |effect| r=0.0275 < 0.25\n\nwrote C:\\Users\\Elke Shayna\\Documents\\00Dev\\milcom-2026-iran-attrition\\results\\milcom_claim_verify.json  elapsed=2.1s\nALL CHECKS PASSED",
+      "duration_ms": 1287,
+      "log_tail": "verify_milcom_claims.py \u2014 computational claim gate (thin MC)\nn_runs=20 days=40 (paper workstream uses 50 runs)\nnon-claims: full grid null count 107/108; phase2; figures\n\nOK:   smoke H1: launches=226 alive 120->21 over 20 days\nOK:   smoke H2: launches=230 alive 120->21 over 20 days\nOK:   smoke H3: launches=230 alive 120->21 over 20 days\n\n[magazine-discipline] v3_realistic+coordinated early H1_vs_H2: n=20 p=0.2674 r=0.2050 d=0.4158 mean H1=383.2 H2=377.6\nOK:   magazine-discipline: p=0.2674 > 0.05 (null holds)\nOK:   magazine-discipline: |effect| r=0.2050 < 0.25\n\n[v1-reference] v1_original+v1 early H1_vs_H2: n=20 p=0.5338 r=0.1150 d=0.3009 mean H1=192.8 H2=197.1\nOK:   v1-reference: p=0.5338 > 0.05 (null holds)\nOK:   v1-reference: |effect| r=0.1150 < 0.25\n\nwrote C:\\Users\\Elke Shayna\\Documents\\00Dev\\milcom-2026-iran-attrition\\results\\milcom_claim_verify.json  elapsed=1.1s\nALL CHECKS PASSED",
+      "errors": [],
+      "golden_ok": null,
+      "golden_details": []
+    },
+    {
+      "id": "milcom-phase2-observability",
+      "ok": true,
+      "command": [
+        "python",
+        "verify_phase2_claims.py"
+      ],
+      "exit_code": 0,
+      "duration_ms": 1213,
+      "log_tail": "verify_phase2_claims.py \u2014 Phase II computational claim gate (thin MC)\nn_seeds=20 days=60 W=3 c_res=[0.2, 0.5, 0.65] (paper Leg1 uses 200 seeds \u00d7 full sweep)\nnon-claims: full grid; empirical coding; H_ceiling 0.500 as sim output\n\n\n[phase2 c_res=0.20] LR: p=0.3356 r=0.1800 | D_win: p=0.0000 r=0.9550 mean H1=0.187 H2=0.026\nOK:   c_res=0.2: launch-rate null p=0.3356 |r|=0.1800\nOK:   c_res=0.2: D_win discrimination p=0.0000 r=0.9550\n[phase2 c_res=0.50] LR: p=0.6353 r=0.0900 | D_win: p=0.0000 r=1.0000 mean H1=0.336 H2=0.026\nOK:   c_res=0.5: launch-rate null p=0.6353 |r|=0.0900\nOK:   c_res=0.5: D_win discrimination p=0.0000 r=1.0000\n[phase2 c_res=0.65] LR: p=0.8493 r=-0.0375 | D_win: p=0.0000 r=1.0000 mean H1=0.403 H2=0.026\nOK:   c_res=0.65: launch-rate null p=0.8493 |r|=0.0375\nOK:   c_res=0.65: D_win discrimination p=0.0000 r=1.0000\n\n[leg3-null] dense p_frame=1 p_attr=0.5 1/day \u2192 rate=0.582\nOK:   leg3 null rate 0.582 in [0.55, 0.72]\n\nwrote C:\\Users\\Elke Shayna\\Documents\\00Dev\\milcom-2026-iran-attrition\\results\\phase2_claim_verify.json  elapsed=1.1s\nALL CHECKS PASSED",
       "errors": [],
       "golden_ok": null,
       "golden_details": []
     }
   ],
   "errors": [],
-  "timestamp_utc": "2026-08-07T00:09:22.021999+00:00",
+  "timestamp_utc": "2026-08-10T01:55:50.293477+00:00",
   "policy": {
     "default_timeout_sec": 600,
     "self_certify_by_reading": false

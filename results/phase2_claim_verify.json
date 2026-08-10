@@ -1,0 +1,82 @@
+{
+  "schema": "milcom-phase2-claim-verify/v1",
+  "ok": true,
+  "elapsed_sec": 1.06,
+  "leg1_thin": {
+    "ok": true,
+    "policy": {
+      "p_lr_null_min": 0.05,
+      "r_lr_null_max": 0.35,
+      "p_attr_max": 0.05,
+      "r_attr_min": 0.5
+    },
+    "cells": [
+      {
+        "c_res": 0.2,
+        "n_seeds": 20,
+        "W": 3,
+        "launch_rate": {
+          "p": 0.3356426560244441,
+          "rank_biserial_r": 0.17999999999999994,
+          "ok": true
+        },
+        "d_win": {
+          "p": 1.7500935767245096e-07,
+          "rank_biserial_r": 0.9550000000000001,
+          "mean_h1": 0.18701420114933087,
+          "mean_h2": 0.026418671297424357,
+          "ok": true
+        }
+      },
+      {
+        "c_res": 0.5,
+        "n_seeds": 20,
+        "W": 3,
+        "launch_rate": {
+          "p": 0.6352934551315081,
+          "rank_biserial_r": 0.09000000000000008,
+          "ok": true
+        },
+        "d_win": {
+          "p": 4.477504678135347e-08,
+          "rank_biserial_r": 1.0,
+          "mean_h1": 0.3357963834125929,
+          "mean_h2": 0.026418671297424357,
+          "ok": true
+        }
+      },
+      {
+        "c_res": 0.65,
+        "n_seeds": 20,
+        "W": 3,
+        "launch_rate": {
+          "p": 0.8492932538316496,
+          "rank_biserial_r": -0.03749999999999998,
+          "ok": true
+        },
+        "d_win": {
+          "p": 4.457552149617072e-08,
+          "rank_biserial_r": 1.0,
+          "mean_h1": 0.4028804421706759,
+          "mean_h2": 0.026418671297424357,
+          "ok": true
+        }
+      }
+    ]
+  },
+  "leg3_null_band": {
+    "ok": true,
+    "rate": 0.582,
+    "band": [
+      0.55,
+      0.72
+    ],
+    "params": {
+      "p_frame": 1.0,
+      "p_attr": 0.5,
+      "provocations_per_day": 1.0,
+      "n_events": 1000,
+      "seed": 1
+    }
+  }
+}
