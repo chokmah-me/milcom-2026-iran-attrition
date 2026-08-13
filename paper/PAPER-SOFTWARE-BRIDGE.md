@@ -7,7 +7,7 @@
 | Parent (v4) paper concept DOI | [10.5281/zenodo.19210451](https://doi.org/10.5281/zenodo.19210451) | *Launcher Attrition Dominates…* always-latest |
 | Parent (v4) paper version DOI | [10.5281/zenodo.19558494](https://doi.org/10.5281/zenodo.19558494) | v4.0 PDF |
 | Software concept DOI | [10.5281/zenodo.19210120](https://doi.org/10.5281/zenodo.19210120) | Always-latest code/data companion |
-| Software version DOI (current) | [10.5281/zenodo.21925901](https://doi.org/10.5281/zenodo.21925901) | 0.6.1 (D_win means) |
+| Software version DOI (current) | [10.5281/zenodo.21925910](https://doi.org/10.5281/zenodo.21925910) | v0.6.1 GitHub–Zenodo |
 
 ## Relation paragraph
 

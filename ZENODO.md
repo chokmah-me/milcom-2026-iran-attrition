@@ -28,7 +28,7 @@ Paper PDFs and software zips use **separate Zenodo concepts**. Do not merge them
 | Role | DOI | Status |
 |------|-----|--------|
 | **Software concept** | [10.5281/zenodo.19210120](https://doi.org/10.5281/zenodo.19210120) | Always-latest code/data zip. |
-| **Software (current version)** | [10.5281/zenodo.21925901](https://doi.org/10.5281/zenodo.21925901) | **0.6.1** (D_win mean columns). |
+| **Software (current version)** | [10.5281/zenodo.21925910](https://doi.org/10.5281/zenodo.21925910) | **v0.6.1** (GitHub–Zenodo). |
 | Software leg3-prereg-v0.2 | [10.5281/zenodo.21443990](https://doi.org/10.5281/zenodo.21443990) | Superseded for “latest”; still the Leg 3 prereg stamp. |
 | Software v4.0 | [10.5281/zenodo.19558036](https://doi.org/10.5281/zenodo.19558036) | Superseded for “latest”; still valid pin for v4.0 tree. |
 | Software v1.0.0 | [10.5281/zenodo.19210121](https://doi.org/10.5281/zenodo.19210121) | Superseded first mint. |
