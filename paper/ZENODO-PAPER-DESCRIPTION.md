@@ -5,8 +5,8 @@
 | Role | DOI / URL |
 |------|-----------|
 | Concept | https://doi.org/10.5281/zenodo.21865793 |
-| Version (v0.3) | https://doi.org/10.5281/zenodo.21925896 |
-| Record | https://zenodo.org/records/21925896 |
+| Version (v0.3) | https://doi.org/10.5281/zenodo.21926014 |
+| Record | https://zenodo.org/records/21926014 |
 | OSF mirror | https://osf.io/c8rgz/ (10.17605/OSF.IO/C8RGZ) |
 
 **Title:** Below the Masking Threshold: Observable Command-and-Control Discrimination in a Residual IRGC Missile Force
@@ -28,13 +28,13 @@
 ## Deposit description body (paste into Zenodo)
 
 **1. Artifact claim.**  
-This deposit is the Phase II companion preprint (v0.2 PDF): an empirical-and-simulation argument that, in a residual IRGC missile force after high week-one attrition, an open-source *attribution-correlation* proxy can discriminate active from pre-programmed C2 under sparse provocation—and that dense provocation saturates that proxy (H_ceiling).
+This deposit is the Phase II companion preprint (v0.3 PDF): an empirical-and-simulation argument that, in a residual IRGC missile force after high week-one attrition, an open-source *attribution-correlation* proxy can discriminate active from pre-programmed C2 under sparse provocation—and that dense provocation saturates that proxy (H_ceiling).
 
 **2. Problem / scientific context.**  
 The parent study found that under high launcher attrition, daily launch rate cannot distinguish C2 architectures; only the emergent target ratio discriminates, and it is unobservable from open sources (paper concept DOI [10.5281/zenodo.19210451](https://doi.org/10.5281/zenodo.19210451); version [10.5281/zenodo.19558494](https://doi.org/10.5281/zenodo.19558494)). Phase II tests both sides of the residual-force boundary that finding implies: low attrition with sparse provocation (April–June 2026 skirmish window) versus low attrition with dense provocation after fighting resumed in July 2026.
 
 **3. Contents (this deposit).**  
-- Single PDF: Phase II manuscript v0.2 (`PHASE2_C2_Observability_REL_FIXED.pdf`).  
+- Single PDF: Phase II manuscript v0.3 (`PHASE2_C2_Observability_REL_FIXED.pdf`), house typesetting with Hebrew epigraph and date.  
 - Not in this deposit: simulation code, CSV outputs, or figure source scripts (those live under the **software** concept DOI [10.5281/zenodo.19210120](https://doi.org/10.5281/zenodo.19210120)).
 
 **4. How to reproduce (prose + pointer to software).**  
@@ -50,8 +50,8 @@ Paper concept (this record’s concept, once minted) ≠ software concept `10.52
 - Under dense July provocation, the construct hits H_ceiling and is **not** offered as a standing C2 indicator.  
 - Not a claim of MILCOM acceptance; not a targeting doctrine attribution of any named unit beyond the stated coding protocol; not a weapons-employment recommendation.
 
-**7. This version (v0.2 scientific delta).**  
-Adds Leg 3 out-of-sample test under resumed hostilities (Section VI), Leg 2 retro-audit of coincidence structure for the three clean Stream B events, H_ceiling interpretation (saturation plus unattributable-antecedent deflation), and count-corrected release narrative. Not a changelog of repository commits.
+**7. This version (v0.3).**  
+Table I H1/H2/H3 D_win levels bound to `data_phase2/phase2_discrimination.csv` (200-seed). c_res=0.65 H1 D_win is 0.433. House PDF (Hebrew epigraph and date). Not a changelog of repository commits. v0.2 scientific content (Legs 1–3, H_ceiling) is unchanged except those grounded numbers.
 
 **8. Citation.**  
 Cite the Phase II **paper concept DOI** (always latest PDF) once minted; pin this PDF with the **version DOI**. Cite the parent argument at paper concept `10.5281/zenodo.19210451`. Cite runnable code at software concept `10.5281/zenodo.19210120`.

@@ -41,6 +41,6 @@ preferred-citation:
   url: "https://doi.org/10.5281/zenodo.21865793"
   notes: >
     Prefer paper concept DOI for always-latest PDF. This version (v0.3) pin:
-    10.5281/zenodo.21925896. Parent v4 paper concept: 10.5281/zenodo.19210451.
+    10.5281/zenodo.21926014. Parent v4 paper concept: 10.5281/zenodo.19210451.
     Software concept (this repository): 10.5281/zenodo.19210120. Version
     0.6.1 pin: 10.5281/zenodo.21925910.

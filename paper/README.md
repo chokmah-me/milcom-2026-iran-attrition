@@ -10,7 +10,7 @@
 | Role | DOI |
 |------|-----|
 | Paper concept (always latest) | [10.5281/zenodo.21865793](https://doi.org/10.5281/zenodo.21865793) |
-| This version (v0.3) | [10.5281/zenodo.21925896](https://doi.org/10.5281/zenodo.21925896) |
+| This version (v0.3) | [10.5281/zenodo.21926014](https://doi.org/10.5281/zenodo.21926014) |
 | OSF mirror | [osf.io/c8rgz](https://osf.io/c8rgz/) ([10.17605/OSF.IO/C8RGZ](https://doi.org/10.17605/OSF.IO/C8RGZ)) |
 
 Deposit craft: [ZENODO-PAPER-DESCRIPTION.md](ZENODO-PAPER-DESCRIPTION.md), [PAPER-SOFTWARE-BRIDGE.md](PAPER-SOFTWARE-BRIDGE.md).  

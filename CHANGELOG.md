@@ -14,7 +14,7 @@ All notable changes to this companion repository are documented here.
 
 ### Notes
 
-- Paper v0.3: [10.5281/zenodo.21925896](https://doi.org/10.5281/zenodo.21925896) under concept [21865793](https://doi.org/10.5281/zenodo.21865793).
+- Paper v0.3: [10.5281/zenodo.21926014](https://doi.org/10.5281/zenodo.21926014) under concept [21865793](https://doi.org/10.5281/zenodo.21865793).
 - Software 0.6.1: [10.5281/zenodo.21925910](https://doi.org/10.5281/zenodo.21925910) (GitHub–Zenodo latest; API mint [21925901](https://doi.org/10.5281/zenodo.21925901) is the prior 0.6.1 draft on the same concept).
 
 ## [Unreleased] — 2026-08-10
