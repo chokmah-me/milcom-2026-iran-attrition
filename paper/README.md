@@ -3,14 +3,14 @@
 ## Phase II (current)
 
 **Title:** Below the Masking Threshold: Observable Command-and-Control Discrimination in a Residual IRGC Missile Force  
-**Version:** 0.2 (2026-08-09)  
+**Version:** 0.3 (2026-08-13)  
 **PDF:** [PHASE2_C2_Observability_REL_FIXED.pdf](PHASE2_C2_Observability_REL_FIXED.pdf)  
-**Source:** [PHASE2_C2_Observability_REL_FIXED.md](PHASE2_C2_Observability_REL_FIXED.md)
+**Source:** [PHASE2_C2_Observability_REL.md](PHASE2_C2_Observability_REL.md) (SoT); twin [PHASE2_C2_Observability_REL_FIXED.md](PHASE2_C2_Observability_REL_FIXED.md)
 
 | Role | DOI |
 |------|-----|
 | Paper concept (always latest) | [10.5281/zenodo.21865793](https://doi.org/10.5281/zenodo.21865793) |
-| This version (v0.2) | [10.5281/zenodo.21865794](https://doi.org/10.5281/zenodo.21865794) |
+| This version (v0.3) | [10.5281/zenodo.21925896](https://doi.org/10.5281/zenodo.21925896) |
 | OSF mirror | [osf.io/c8rgz](https://osf.io/c8rgz/) ([10.17605/OSF.IO/C8RGZ](https://doi.org/10.17605/OSF.IO/C8RGZ)) |
 
 Deposit craft: [ZENODO-PAPER-DESCRIPTION.md](ZENODO-PAPER-DESCRIPTION.md), [PAPER-SOFTWARE-BRIDGE.md](PAPER-SOFTWARE-BRIDGE.md).  

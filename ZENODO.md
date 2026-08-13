@@ -7,13 +7,14 @@ Paper PDFs and software zips use **separate Zenodo concepts**. Do not merge them
 | Role | DOI | Status |
 |------|-----|--------|
 | **Phase II paper concept** | [10.5281/zenodo.21865793](https://doi.org/10.5281/zenodo.21865793) | **Stable.** Always resolves to the latest Phase II PDF. |
-| **Phase II paper (current version)** | [10.5281/zenodo.21865794](https://doi.org/10.5281/zenodo.21865794) | v0.2; *Below the Masking Threshold…*; PDF only. |
+| **Phase II paper (current version)** | [10.5281/zenodo.21925896](https://doi.org/10.5281/zenodo.21925896) | **v0.3** (2026-08-13); D_win means bound to CSV; PDF only. |
 
 ### Phase II paper version history
 
 | Version DOI | Status | Notes |
 |-------------|--------|-------|
-| [10.5281/zenodo.21865794](https://doi.org/10.5281/zenodo.21865794) | **Current** | v0.2 (2026-08-09): Legs 1–3, H_ceiling, count-corrected FIXED PDF. |
+| [10.5281/zenodo.21925896](https://doi.org/10.5281/zenodo.21925896) | **Current** | v0.3 (2026-08-13): Table I H1/H2/H3 D_win bound to `phase2_discrimination.csv`. |
+| [10.5281/zenodo.21865794](https://doi.org/10.5281/zenodo.21865794) | Superseded | v0.2 (2026-08-09): Legs 1–3, H_ceiling, count-corrected FIXED PDF. |
 
 ## Parent (v4) paper
 
@@ -27,7 +28,8 @@ Paper PDFs and software zips use **separate Zenodo concepts**. Do not merge them
 | Role | DOI | Status |
 |------|-----|--------|
 | **Software concept** | [10.5281/zenodo.19210120](https://doi.org/10.5281/zenodo.19210120) | Always-latest code/data zip. |
-| **Software (current version)** | [10.5281/zenodo.21443990](https://doi.org/10.5281/zenodo.21443990) | leg3-prereg-v0.2 (includes Phase II code path). |
+| **Software (current version)** | [10.5281/zenodo.21925901](https://doi.org/10.5281/zenodo.21925901) | **0.6.1** (D_win mean columns). |
+| Software leg3-prereg-v0.2 | [10.5281/zenodo.21443990](https://doi.org/10.5281/zenodo.21443990) | Superseded for “latest”; still the Leg 3 prereg stamp. |
 | Software v4.0 | [10.5281/zenodo.19558036](https://doi.org/10.5281/zenodo.19558036) | Superseded for “latest”; still valid pin for v4.0 tree. |
 | Software v1.0.0 | [10.5281/zenodo.19210121](https://doi.org/10.5281/zenodo.19210121) | Superseded first mint. |
 
@@ -45,8 +47,8 @@ Paper PDFs and software zips use **separate Zenodo concepts**. Do not merge them
 
 **Phase II paper (prefer concept DOI; version DOI for a pinned PDF):**
 
-Bilar, D. Y. (2026). *Below the Masking Threshold: Observable Command-and-Control Discrimination in a Residual IRGC Missile Force* (v0.2). Zenodo.  
-https://doi.org/10.5281/zenodo.21865793 (concept); https://doi.org/10.5281/zenodo.21865794 (this PDF)
+Bilar, D. Y. (2026). *Below the Masking Threshold: Observable Command-and-Control Discrimination in a Residual IRGC Missile Force* (v0.3). Zenodo.  
+https://doi.org/10.5281/zenodo.21865793 (concept); https://doi.org/10.5281/zenodo.21925896 (this PDF)
 
 **Parent paper:**
 
@@ -58,6 +60,6 @@ https://doi.org/10.5281/zenodo.19210451 (concept)
 Bilar, D. Y. (2026). *milcom-2026-iran-attrition* companion code and data. Zenodo.  
 https://doi.org/10.5281/zenodo.19210120 (concept)
 
-## Direct PDF URL (record 21865794)
+## Direct PDF URL (record 21925896)
 
-https://zenodo.org/records/21865794/files/PHASE2_C2_Observability_REL_FIXED.pdf
+https://zenodo.org/records/21925896/files/PHASE2_C2_Observability_REL_FIXED.pdf

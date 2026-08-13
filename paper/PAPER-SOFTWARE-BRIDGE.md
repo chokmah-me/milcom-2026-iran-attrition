@@ -3,11 +3,11 @@
 | Role | Identifier | Notes |
 |------|------------|-------|
 | Phase II paper concept DOI | [10.5281/zenodo.21865793](https://doi.org/10.5281/zenodo.21865793) | Always-latest Phase II PDF |
-| Phase II paper version DOI (v0.2) | [10.5281/zenodo.21865794](https://doi.org/10.5281/zenodo.21865794) | This FIXED PDF |
+| Phase II paper version DOI (v0.3) | [10.5281/zenodo.21925896](https://doi.org/10.5281/zenodo.21925896) | This FIXED PDF |
 | Parent (v4) paper concept DOI | [10.5281/zenodo.19210451](https://doi.org/10.5281/zenodo.19210451) | *Launcher Attrition Dominates…* always-latest |
 | Parent (v4) paper version DOI | [10.5281/zenodo.19558494](https://doi.org/10.5281/zenodo.19558494) | v4.0 PDF |
 | Software concept DOI | [10.5281/zenodo.19210120](https://doi.org/10.5281/zenodo.19210120) | Always-latest code/data companion |
-| Software version DOI (current) | [10.5281/zenodo.21443990](https://doi.org/10.5281/zenodo.21443990) | leg3-prereg-v0.2 (includes Phase II code path) |
+| Software version DOI (current) | [10.5281/zenodo.21925901](https://doi.org/10.5281/zenodo.21925901) | 0.6.1 (D_win means) |
 
 ## Relation paragraph
 

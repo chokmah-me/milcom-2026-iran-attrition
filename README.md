@@ -12,7 +12,7 @@ Companion code and data for two related papers:
 | Surface | DOI |
 |---------|-----|
 | **Phase II paper concept** (always latest PDF) | [10.5281/zenodo.21865793](https://doi.org/10.5281/zenodo.21865793) |
-| Phase II paper v0.2 (this PDF) | [10.5281/zenodo.21865794](https://doi.org/10.5281/zenodo.21865794) |
+| Phase II paper v0.3 (this PDF) | [10.5281/zenodo.21925896](https://doi.org/10.5281/zenodo.21925896) |
 | Phase II OSF mirror | [osf.io/c8rgz](https://osf.io/c8rgz/) ([10.17605/OSF.IO/C8RGZ](https://doi.org/10.17605/OSF.IO/C8RGZ)) |
 | v4 paper version | [10.5281/zenodo.19558494](https://doi.org/10.5281/zenodo.19558494) |
 | Software concept (always latest code) | [10.5281/zenodo.19210120](https://doi.org/10.5281/zenodo.19210120) |
@@ -253,7 +253,7 @@ Launcher attrition is calibrated as an exogenous three-phase curve against open-
   year    = {2026},
   version = {0.2},
   doi     = {10.5281/zenodo.21865793},
-  note    = {Version pin: 10.5281/zenodo.21865794; OSF mirror 10.17605/OSF.IO/C8RGZ}
+  note    = {Version pin: 10.5281/zenodo.21925896; OSF mirror 10.17605/OSF.IO/C8RGZ}
 }
 ```
 

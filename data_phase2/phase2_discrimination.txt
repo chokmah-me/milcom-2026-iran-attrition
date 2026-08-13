@@ -1,6 +1,6 @@
-PHASE II LEG 1 â€” ATTRITION-CORRELATION DISCRIMINATION
+PHASE II LEG 1 — ATTRITION-CORRELATION DISCRIMINATION
 ====================================================================
-seeds=200  days=60  n_prov=8  prov_value=1.2  runtime=30.4s
+seeds=200  days=60  n_prov=8  prov_value=1.2  runtime=36.1s
 Metric: H1 (adaptive) vs H2 (pre-programmed). r = rank-biserial (+ means H1>H2).
 D_all = correlated/all strikes ; D_win = correlated/in-window strikes
 EMR = full emergent ratio (unobservable v4-style comparator). CTX = r(D_all) vs r(EMR): observable proxy vs unobservable ceiling (not a strict ratio).
@@ -27,6 +27,6 @@ READ:
     stops swamping targeting. The LR-vs-D_all contrast on identical runs is the
     paper's core result.
   r(EMR): the v4-style full emergent ratio (unobservable ceiling), for context.
-  H2 D_all > 0 is the coincidence floor (standing provokers, codebook Â§8).
+  H2 D_all > 0 is the coincidence floor (standing provokers, codebook §8).
   Separation is near-complete because H1/H2 are idealized archetypes; the real
   force is a mixture (cf. H3, and empirical Stream B ~0.64).

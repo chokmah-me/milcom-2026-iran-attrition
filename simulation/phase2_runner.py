@@ -203,6 +203,7 @@ def write_report(per_run, elapsed, path_txt, path_csv):
             r_win, p_win, d_win, m1_win, m2_win = discriminate(per_run, W, c_res, "d_win")
             r_emr, p_emr, d_emr, m1_emr, m2_emr = discriminate(per_run, W, c_res, "emr")
             m3_all = _mean(per_run[(W, c_res, "H3")]["d_all"])
+            m3_win = _mean(per_run[(W, c_res, "H3")]["d_win"])
             lat_med = _median(per_run[(W, c_res, "H1")]["lat"])
             lines.append(
                 f"{c_res:>6.2f} | {r_lr:>7.3f} {p_lr:>7.3f} | "
@@ -219,6 +220,9 @@ def write_report(per_run, elapsed, path_txt, path_csv):
                 "mean_H1_D_all": round(m1_all, 4),
                 "mean_H2_D_all": round(m2_all, 4),
                 "mean_H3_D_all": round(m3_all, 4),
+                "mean_H1_D_win": round(m1_win, 4),
+                "mean_H2_D_win": round(m2_win, 4),
+                "mean_H3_D_win": round(m3_win, 4),
                 "lat_median_days": lat_med if lat_med is not None else "",
             })
         lines.append("")

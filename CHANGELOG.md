@@ -2,6 +2,21 @@
 
 All notable changes to this companion repository are documented here.
 
+## [Phase II paper v0.3 / software 0.6.1] — 2026-08-13
+
+### Changed
+
+- Table I H1/H2/H3 **D_win levels** bound to `data_phase2/phase2_discrimination.csv` (200-seed). c_res=0.65 H1 D_win 0.434 → **0.433**. p-values to 3 decimals.
+- `simulation/phase2_runner.py` writes `mean_H1_D_win`, `mean_H2_D_win`, `mean_H3_D_win`.
+- Regenerated `data_phase2/phase2_discrimination.csv` and `.txt`.
+- Fig. 1 placeholder replaced with preprint note pointing at `figures/phase2_fig1_discrimination.png`.
+- Manuscript integrity: I1 green except empirical 0.64 / 0.500 (hand-coded).
+
+### Notes
+
+- Paper v0.3: [10.5281/zenodo.21925896](https://doi.org/10.5281/zenodo.21925896) under concept [21865793](https://doi.org/10.5281/zenodo.21865793).
+- Software 0.6.1: [10.5281/zenodo.21925901](https://doi.org/10.5281/zenodo.21925901) under concept [19210120](https://doi.org/10.5281/zenodo.19210120).
+
 ## [Unreleased] — 2026-08-10
 
 ### Added

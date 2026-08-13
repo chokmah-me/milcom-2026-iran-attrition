@@ -1,19 +1,19 @@
-# Zenodo paper description — Phase II v0.2
+# Zenodo paper description — Phase II (v0.3 on disk; v0.2 live until mint)
 
 **Published**
 
 | Role | DOI / URL |
 |------|-----------|
 | Concept | https://doi.org/10.5281/zenodo.21865793 |
-| Version (v0.2) | https://doi.org/10.5281/zenodo.21865794 |
-| Record | https://zenodo.org/records/21865794 |
+| Version (v0.3) | https://doi.org/10.5281/zenodo.21925896 |
+| Record | https://zenodo.org/records/21925896 |
 | OSF mirror | https://osf.io/c8rgz/ (10.17605/OSF.IO/C8RGZ) |
 
 **Title:** Below the Masking Threshold: Observable Command-and-Control Discrimination in a Residual IRGC Missile Force
 
 **Creators:** Bilar, Daniyel Yaacov (Chokmah LLC; ORCID 0000-0002-9040-6914)
 
-**Version:** 0.2
+**Version:** 0.3
 
 **License:** CC-BY-4.0
 
