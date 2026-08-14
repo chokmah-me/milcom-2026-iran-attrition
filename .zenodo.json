@@ -8,6 +8,7 @@
       "orcid": "0000-0002-9040-6914"
     }
   ],
+  "description": "<p><strong>1. Artifact claim.</strong> Companion code and data for the v4 launcher-attrition paper and the Phase II residual-force C2 observability extension (<code>milcom-2026-iran-attrition</code> 0.6.1).</p>\n<p><strong>2. Problem / scientific context.</strong> Implements the agent-based model, Phase II residual/provocation extension, claim gates, and locked <code>data_phase2/</code> table that grounds Table I D_win means.</p>\n<p><strong>3. Contents.</strong> <code>simulation/</code> (<code>c2_core.py</code>, <code>phase2_runner.py</code>, <code>leg3_null_sim.py</code>), <code>verify_*.py</code>, <code>claim-manifest.json</code>, <code>integrity-manifest.json</code>, <code>data/</code>, <code>data_phase2/</code> (including <code>mean_H*_D_win</code> columns), and figures. This deposit is the software zip only. No paper PDF.</p>\n<p><strong>4. Reproduce.</strong> Python 3.8+, standard library only. <code>python verify_milcom_claims.py</code>; <code>python verify_phase2_claims.py</code>; full grid <code>simulation/phase2_runner.py</code>.</p>\n<p><strong>5. Relation to papers.</strong> Software concept <a href=\"https://doi.org/10.5281/zenodo.19210120\">10.5281/zenodo.19210120</a>. Phase II paper concept <a href=\"https://doi.org/10.5281/zenodo.21865793\">10.5281/zenodo.21865793</a>, this PDF pin <a href=\"https://doi.org/10.5281/zenodo.21926014\">10.5281/zenodo.21926014</a>. Parent paper <a href=\"https://doi.org/10.5281/zenodo.19210451\">10.5281/zenodo.19210451</a> / <a href=\"https://doi.org/10.5281/zenodo.19558494\">10.5281/zenodo.19558494</a>. Leg 3 prereg stamp remains <a href=\"https://doi.org/10.5281/zenodo.21443990\">10.5281/zenodo.21443990</a>.</p>\n<p><strong>6. Limitations / non-claims.</strong> Thin Monte Carlo gates are not the 200-seed paper grid. Empirical 0.64 / 0.500 are hand-coded and are not in this zip as a machine-readable coding table. Not a targeting tool.</p>\n<p><strong>7. This version (0.6.1).</strong> Adds D_win mean columns to the 200-seed discrimination CSV and binds Table I.</p>\n<p><strong>8. Citation.</strong> Prefer software concept DOI <a href=\"https://doi.org/10.5281/zenodo.19210120\">10.5281/zenodo.19210120</a>. Pin this zip with <a href=\"https://doi.org/10.5281/zenodo.21925910\">10.5281/zenodo.21925910</a>. Cite the PDF separately.</p>",
   "keywords": [
     "ballistic missile defense",
     "agent-based modeling",
@@ -24,6 +25,31 @@
   "license": "MIT",
   "access_right": "open",
   "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21865793",
+      "relation": "isSupplementTo",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.21926014",
+      "relation": "isSupplementTo",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.19210451",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.19558494",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.21443990",
+      "relation": "references",
+      "scheme": "doi"
+    },
     {
       "identifier": "10.5281/zenodo.19558036",
       "relation": "isNewVersionOf",

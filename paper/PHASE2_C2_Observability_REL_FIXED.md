@@ -1,4 +1,4 @@
-<p class="hebrew-epigraph" dir="rtl" lang="he">אִם יִרְצֶה הַשֵּׁם</p> <p class="hebrew-date" dir="rtl" lang="he">כ"ו בְּאָב ה'תשפ"ו</p>
+<p class="hebrew-epigraph" dir="rtl" lang="he">אִם יִרְצֶה הַשֵּׁם</p> <p class="hebrew-date" dir="rtl" lang="he">א׳ בֶּאֱלוּל תשפ״ו</p>
 
 # Below the Masking Threshold: Observable Command-and-Control Discrimination in a Residual IRGC Missile Force
 
