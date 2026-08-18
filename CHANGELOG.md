@@ -14,8 +14,9 @@ All notable changes to this companion repository are documented here.
 ### Notes
 
 - Interactive Recharts dashboards under `artifacts/` are out of scope.
-- Paper v0.3 / software 0.6.1 not reminted. Embedded PDF Fig. 1 is stale
-  until the next paper mint.
+- Phase II Fig. 1 now embedded (`figures/phase2_fig1_discrimination.png`,
+  Tufte restyle). `PHASE2_C2_Observability_REL_FIXED.pdf` rebuilt in Typora.
+  Paper v0.3 / software 0.6.1 not reminted.
 
 ## [Phase II paper v0.3 / software 0.6.1] — 2026-08-13
 
