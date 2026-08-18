@@ -2,6 +2,21 @@
 
 All notable changes to this companion repository are documented here.
 
+## [Unreleased] — 2026-08-17 — Tufte Fig. 1 (no remint)
+
+### Changed
+
+- `figures/fig1_attrition.svg`: axis to N0=420; phase days 3/7/12 as ticks;
+  grid, on-figure "Fig. 1" title, and perishable "Today (d23)" removed;
+  source line on the figure.
+- `simulation/generate_figures.py` `make_fig1()`.
+
+### Notes
+
+- Interactive Recharts dashboards under `artifacts/` are out of scope.
+- Paper v0.3 / software 0.6.1 not reminted. Embedded PDF Fig. 1 is stale
+  until the next paper mint.
+
 ## [Phase II paper v0.3 / software 0.6.1] — 2026-08-13
 
 ### Changed

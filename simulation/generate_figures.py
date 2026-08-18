@@ -44,74 +44,67 @@ def polyline(points, color, width=1.5, dash=""):
 # ── Figure 1: Launcher Attrition Curve ────────────────────────────
 
 def make_fig1():
-    W, H = 480, 300
-    mx, my, mr, mb = 55, 30, 20, 40  # margins
+    # Print-first: no grid, axis to the true inventory (420), source on figure.
+    # "Today (d23)" dropped — it is a perishable snapshot, not a data point.
+    W, H = 480, 310
+    mx, my, mr, mb = 58, 18, 16, 52
     pw, ph = W - mx - mr, H - my - mb
+    N0 = 420
 
     days = list(range(0, 61))
-    # Same attrition function as simulation
-    def surv(d):
-        if d <= 3: return 1.0 - (0.50 * d / 3)
-        elif d <= 7: return 0.50 - (0.25 * (d - 3) / 4)
-        elif d <= 12: return 0.25 - (0.01 * (d - 7))
-        else: return max(0.05, 0.20 - (0.003 * (d - 12)))
 
-    vals = [surv(d) * 420 for d in days]
+    def surv(d):
+        if d <= 3:
+            return 1.0 - (0.50 * d / 3)
+        if d <= 7:
+            return 0.50 - (0.25 * (d - 3) / 4)
+        if d <= 12:
+            return 0.25 - (0.01 * (d - 7))
+        return max(0.05, 0.20 - (0.003 * (d - 12)))
+
+    vals = [surv(d) * N0 for d in days]
+
+    def xy(d, v):
+        return mx + (d / 60) * pw, my + ph - (v / N0) * ph
 
     svg = svg_header(W, H)
-    svg += f'  <text x="{W/2}" y="18" text-anchor="middle" class="title">Fig. 1. Launcher Attrition Curve (Calibrated to OSINT)</text>\n'
+    # Range-frame axes (data extrema)
+    x0, y_top = xy(0, N0)
+    x1, y_bot = xy(60, 0)
+    svg += f'  <line x1="{x0}" y1="{y_bot}" x2="{x0}" y2="{y_top}" class="axis"/>\n'
+    svg += f'  <line x1="{x0}" y1="{y_bot}" x2="{x1}" y2="{y_bot}" class="axis"/>\n'
 
-    # Axes
-    svg += f'  <line x1="{mx}" y1="{my}" x2="{mx}" y2="{my+ph}" class="axis"/>\n'
-    svg += f'  <line x1="{mx}" y1="{my+ph}" x2="{mx+pw}" y2="{my+ph}" class="axis"/>\n'
+    for v in (0, 210, 420):
+        _, y = xy(0, v)
+        svg += f'  <text x="{mx-6}" y="{y+3}" text-anchor="end" class="tick">{v}</text>\n'
+    for d in (0, 3, 7, 12, 30, 60):
+        x, _ = xy(d, 0)
+        svg += f'  <text x="{x}" y="{my+ph+12}" text-anchor="middle" class="tick">{d}</text>\n'
 
-    # Grid and ticks
-    for v in [0, 100, 200, 300, 400]:
-        y = my + ph - (v / 420) * ph
-        svg += f'  <line x1="{mx}" y1="{y}" x2="{mx+pw}" y2="{y}" class="grid"/>\n'
-        svg += f'  <text x="{mx-5}" y="{y+3}" text-anchor="end" class="tick">{v}</text>\n'
+    svg += f'  <text x="{W/2}" y="{H-22}" text-anchor="middle" class="label">day of conflict</text>\n'
+    svg += (
+        f'  <text x="12" y="{(my+my+ph)/2}" text-anchor="middle" class="label" '
+        f'transform="rotate(-90,12,{(my+my+ph)/2})">surviving launchers (of {N0})</text>\n'
+    )
 
-    for d in [0, 10, 20, 30, 40, 50, 60]:
-        x = mx + (d / 60) * pw
-        svg += f'  <text x="{x}" y="{my+ph+14}" text-anchor="middle" class="tick">{d}</text>\n'
+    pts = [xy(d, v) for d, v in zip(days, vals)]
+    svg += polyline(pts, "#1a1a1a", 1.6)
 
-    # Labels
-    svg += f'  <text x="{W/2}" y="{H-5}" text-anchor="middle" class="label">Day of Conflict</text>\n'
-    svg += f'  <text x="12" y="{H/2}" text-anchor="middle" class="label" transform="rotate(-90,12,{H/2})">Surviving Launchers</text>\n'
+    # Phase breaks as ticks on the data, not floating words
+    for d, name in ((3, "50%"), (7, "75%")):
+        x, y = xy(d, surv(d) * N0)
+        svg += f'  <circle cx="{x}" cy="{y}" r="2.4" fill="#1a1a1a"/>\n'
+        svg += f'  <text x="{x+4}" y="{y-5}" class="tick">{name}</text>\n'
+    xb, yb = xy(12, 100)
+    svg += f'  <circle cx="{xb}" cy="{yb}" r="2.4" fill="#1a1a1a"/>\n'
+    svg += f'  <text x="{xb+4}" y="{yb-5}" class="tick">Bloomberg ~100</text>\n'
 
-    # Data line
-    pts = [(mx + (d/60)*pw, my + ph - (v/420)*ph) for d, v in zip(days, vals)]
-    svg += polyline(pts, "#2563eb", 2)
-
-    # Phase annotations
-    # Phase 1: rapid (d0-3)
-    x1 = mx + (1.5/60)*pw
-    svg += f'  <text x="{x1}" y="{my+20}" text-anchor="middle" class="legend" fill="#dc2626">Phase 1</text>\n'
-    svg += f'  <text x="{x1}" y="{my+30}" text-anchor="middle" class="legend" fill="#dc2626">Rapid</text>\n'
-
-    # Phase 2: steep (d3-7)
-    x2 = mx + (5/60)*pw
-    svg += f'  <text x="{x2}" y="{my+55}" text-anchor="middle" class="legend" fill="#d97706">Phase 2</text>\n'
-    svg += f'  <text x="{x2}" y="{my+65}" text-anchor="middle" class="legend" fill="#d97706">Steep</text>\n'
-
-    # Phase 3: plateau (d12+)
-    x3 = mx + (35/60)*pw
-    y3 = my + ph - (100/420)*ph
-    svg += f'  <text x="{x3}" y="{y3-10}" text-anchor="middle" class="legend" fill="#16a34a">Phase 3: Plateau (~100 units)</text>\n'
-
-    # Reference points from OSINT
-    osint_pts = [(3, 210, "~210 (50%)"), (7, 105, "~105 (75%)"), (12, 100, "Bloomberg: ~100")]
-    for d, v, label in osint_pts:
-        x = mx + (d/60)*pw
-        y = my + ph - (v/420)*ph
-        svg += f'  <circle cx="{x}" cy="{y}" r="3" fill="#dc2626"/>\n'
-        svg += f'  <text x="{x+5}" y="{y-5}" class="tick" fill="#dc2626">{label}</text>\n'
-
-    # Day 23 marker
-    x23 = mx + (23/60)*pw
-    svg += f'  <line x1="{x23}" y1="{my}" x2="{x23}" y2="{my+ph}" stroke="#f97316" stroke-width="1" stroke-dasharray="4 3"/>\n'
-    svg += f'  <text x="{x23+3}" y="{my+15}" class="tick" fill="#f97316">Today (d23)</text>\n'
-
+    svg += (
+        f'  <text x="8" y="{H-6}" class="tick" fill="#666">'
+        f'Parametric attrition used by the simulation (N0={N0}). '
+        f'Bloomberg mark is the OSINT plateau anchor, not a fitted series. '
+        f'generate_figures.py.</text>\n'
+    )
     svg += svg_footer()
     return svg
 
